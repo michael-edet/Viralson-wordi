@@ -1,0 +1,250 @@
+<?php
+/**
+ * Template Name: Community Page
+ * Description: Community Hub Discussions
+ *
+ * @package ViralSon
+ */
+get_header();
+?>
+
+<main>
+        
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <span class="post-category" style="background:#e8eaf6; color:#3f51b5; margin-bottom: 0.8rem;">Voices &amp; Discussions</span>
+        <h1>Community Hub</h1>
+        <p>A vibrant, moderated space where readers, creators, and experts exchange perspectives on modern culture, technology, and society.</p>
+    </div>
+</section>
+
+<!-- Official Community Platform Hubs (Reddit, Telegram, WhatsApp) -->
+<section class="community-platforms-section" style="padding: 2.5rem 0 1rem 0;">
+    <div class="container">
+        <div style="text-align: center; max-width: 780px; margin: 0 auto 2.5rem auto;">
+            <span class="post-category" style="background: var(--light-blue); color: var(--primary-blue); font-weight: 700; margin-bottom: 0.6rem;">Connect Everywhere</span>
+            <h2 class="section-title center" style="margin-bottom: 0.8rem;">Official Live Channels &amp; Communities</h2>
+            <p style="font-size: 1.05rem; color: var(--text-light); line-height: 1.6;">
+                Join the conversation where you feel most at home. Connect directly with our editors, debate trending stories in real-time, and get exclusive community briefings across Reddit, Telegram, and WhatsApp.
+            </p>
+        </div>
+
+        <div class="community-channels-grid">
+            <!-- Reddit Channel Card -->
+            <div class="community-channel-card reddit-card">
+                <div class="channel-card-top">
+                    <div class="channel-icon-badge reddit-icon-badge">
+                        <i class="fab fa-reddit-alien"></i>
+                    </div>
+                    <div class="channel-badge reddit-badge">
+                        <span class="pulse-dot reddit-dot"></span> Active Subreddit
+                    </div>
+                </div>
+                <h3 class="channel-title">Reddit Community</h3>
+                <div class="channel-handle">r/viralson</div>
+                <p class="channel-description">
+                    Engage in deep-dive threads, upvote community stories, participate in weekly editor AMAs, and debate the latest breaking tech &amp; culture topics.
+                </p>
+                <div class="channel-meta-features">
+                    <span><i class="fas fa-check-circle"></i> Weekly AMA Sessions</span>
+                    <span><i class="fas fa-check-circle"></i> Community Story Submissions</span>
+                </div>
+                <a href="https://reddit.com/r/viralson" target="_blank" rel="noopener noreferrer" class="btn btn-channel btn-reddit" aria-label="Join Viral Son on Reddit">
+                    <i class="fab fa-reddit-alien"></i>
+                    <span>Join Subreddit &amp; Community</span>
+                    <i class="fas fa-external-link-alt" style="font-size: 0.75rem; opacity: 0.8;"></i>
+                </a>
+            </div>
+
+            <!-- Telegram Channel Card -->
+            <div class="community-channel-card telegram-card">
+                <div class="channel-card-top">
+                    <div class="channel-icon-badge telegram-icon-badge">
+                        <i class="fab fa-telegram-plane"></i>
+                    </div>
+                    <div class="channel-badge telegram-badge">
+                        <span class="pulse-dot telegram-dot"></span> Instant Broadcast &amp; Chat
+                    </div>
+                </div>
+                <h3 class="channel-title">Telegram Channel</h3>
+                <div class="channel-handle">@viralson</div>
+                <p class="channel-description">
+                    Get breaking news alerts the second they break, audio dispatches, behind-the-scenes previews, and chat with members in our open discussion group.
+                </p>
+                <div class="channel-meta-features">
+                    <span><i class="fas fa-check-circle"></i> Instant Breaking Alerts</span>
+                    <span><i class="fas fa-check-circle"></i> Open Discussion Group</span>
+                </div>
+                <a href="https://t.me/viralson" target="_blank" rel="noopener noreferrer" class="btn btn-channel btn-telegram" aria-label="Join Viral Son on Telegram">
+                    <i class="fab fa-telegram-plane"></i>
+                    <span>Join Telegram Channel &amp; Chat</span>
+                    <i class="fas fa-external-link-alt" style="font-size: 0.75rem; opacity: 0.8;"></i>
+                </a>
+            </div>
+
+            <!-- WhatsApp Channel Card -->
+            <div class="community-channel-card whatsapp-card">
+                <div class="channel-card-top">
+                    <div class="channel-icon-badge whatsapp-icon-badge">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="channel-badge whatsapp-badge">
+                        <span class="pulse-dot whatsapp-dot"></span> Official Channel &amp; Group
+                    </div>
+                </div>
+                <h3 class="channel-title">WhatsApp Community</h3>
+                <div class="channel-handle">Viral Son Official Channel &amp; VIP Group</div>
+                <p class="channel-description">
+                    Direct curated daily digests, lossless sound bites, community polls, and exclusive VIP reader chat right inside your favorite messaging app.
+                </p>
+                <div class="channel-meta-features">
+                    <span><i class="fas fa-check-circle"></i> Daily Curated Digests</span>
+                    <span><i class="fas fa-check-circle"></i> Interactive Polls &amp; Group</span>
+                </div>
+                <a href="https://whatsapp.com/channel/viralson" target="_blank" rel="noopener noreferrer" class="btn btn-channel btn-whatsapp" aria-label="Join Viral Son on WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Join WhatsApp Channel &amp; Group</span>
+                    <i class="fas fa-external-link-alt" style="font-size: 0.75rem; opacity: 0.8;"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="community-layout" style="margin-bottom: 4rem;">
+        <div>
+            <h2 class="section-title">Active Discussion Boards</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem;">
+                <div style="background: var(--white); padding: 1.8rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-left: 4px solid var(--primary-blue);">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span class="post-category tech">Tech Debate</span>
+                        <span style="font-size: 0.85rem; color: var(--text-light);"><i class="far fa-comments"></i> 148 replies</span>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.6rem;"><a href="../posts/future-of-ai/index.html">Will autonomous agent workflows replace traditional SaaS interfaces by 2028?</a></h3>
+                    <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 1rem;">Community members weigh in on software automation, personal agent architectures, and enterprise adoption hurdles.</p>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-light);">
+                        <span>Started by <strong>@AlexCoder</strong></span>
+                        <span>Active 12m ago</span>
+                    </div>
+                </div>
+
+                <div style="background: var(--white); padding: 1.8rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-left: 4px solid var(--green);">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span class="post-category news">Climate Action</span>
+                        <span style="font-size: 0.85rem; color: var(--text-light);"><i class="far fa-comments"></i> 92 replies</span>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.6rem;"><a href="../posts/global-climate-summit/index.html">How local communities can participate in the newly announced conservation targets</a></h3>
+                    <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 1rem;">Sharing grassroots reforestation efforts, municipal solar cooperatives, and water harvesting models.</p>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-light);">
+                        <span>Started by <strong>@EcoLeader</strong></span>
+                        <span>Active 1h ago</span>
+                    </div>
+                </div>
+
+                <div style="background: var(--white); padding: 1.8rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-left: 4px solid var(--purple);">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span class="post-category ent">Music Producers</span>
+                        <span style="font-size: 0.85rem; color: var(--text-light);"><i class="far fa-comments"></i> 64 replies</span>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.6rem;"><a href="../download/music/index.html">Stem remix contest: "Midnight Whispers" acoustic tracks available</a></h3>
+                    <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 1rem;">Download raw audio stems and submit your electronic or orchestral remix before the end of the month.</p>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-light);">
+                        <span>Started by <strong>@AuroraAudio</strong></span>
+                        <span>Active 3h ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Join / Guidelines Sidebar -->
+        <div>
+            <!-- Sidebar Google Ads Display Unit -->
+            
+            
+
+<!-- Google Ads Scene: Sidebar Display Unit (300x250 / 300x600 Half-Page) -->
+<div class="google-ad-wrapper sidebar-ad-wrapper" data-ad-type="sidebar">
+    <div class="google-ad-header">
+        <span class="ad-label">SPONSORED</span>
+        <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" class="adchoices-link" title="Ads by Google">
+            <i class="fab fa-google" style="font-size: 0.7rem; margin-right: 2px;"></i> Ad
+        </a>
+    </div>
+
+    <!-- Google AdSense Tag -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9481237418920194" data-ad-slot="4920192831" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
+
+    <!-- Visual Ad Scene Display -->
+    <div class="ad-creative-scene sidebar-scene">
+        <div class="ad-scene-media">
+            <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1511707171634-5f897ff02aa9%3Fauto%3Dformat%26fit%3Dcrop%26w%3D400%26q%3D80?_a=BBFAAAAA0" alt="Google Hardware Showcase" loading="lazy">
+            <span class="ad-sponsored-pill">Featured Hardware</span>
+        </div>
+        <div class="ad-scene-content">
+            <h4 class="ad-scene-title">Google Pixel 9 Pro Fold</h4>
+            <p class="ad-scene-desc">The thinnest foldable with Super Actua Flex displays and generative Gemini intelligence built right in.</p>
+            <div class="ad-scene-footer">
+                <span class="ad-price-tag">From $1,799</span>
+                <a href="https://store.google.com/" target="_blank" rel="noopener noreferrer" class="ad-cta-btn small">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+            <!-- Account Creation Panel (Labeled Coming Soon) -->
+            <div class="sidebar-widget account-creation-panel" style="margin-bottom: 2rem; position: relative; overflow: hidden;">
+                <div class="coming-soon-banner">
+                    <span class="coming-soon-pill">
+                        <i class="fas fa-lock" style="font-size: 0.72rem;"></i> Coming Soon
+                    </span>
+                </div>
+                
+                <h3 class="sidebar-title" style="margin-top: 0.35rem;">Join Member Ranks</h3>
+                <p style="font-size: 0.92rem; color: var(--text-light); margin-bottom: 1.2rem; line-height: 1.5;">
+                    Member accounts and personalized contributor dashboards are <strong>currently under development</strong>. Join our official Reddit, Telegram, or WhatsApp channels above to receive early beta access keys when registration opens!
+                </p>
+
+                <div class="coming-soon-feature-box" style="background: var(--light-blue); padding: 1rem; border-radius: var(--radius-sm); border: 1px dashed var(--primary-blue); margin-bottom: 1.2rem;">
+                    <div style="font-weight: 700; font-size: 0.85rem; color: var(--dark-blue); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-sparkles" style="color: var(--primary-blue);"></i> Upcoming Member Perks:
+                    </div>
+                    <ul style="list-style: none; font-size: 0.82rem; color: var(--text-dark); padding-left: 0; margin: 0; line-height: 1.6;">
+                        <li><i class="fas fa-check" style="color: var(--green); margin-right: 6px;"></i> Verified reader badge &amp; profile flair</li>
+                        <li><i class="fas fa-check" style="color: var(--green); margin-right: 6px;"></i> Community article drafting &amp; submissions</li>
+                        <li><i class="fas fa-check" style="color: var(--green); margin-right: 6px;"></i> Unrestricted lossless audio &amp; stem downloads</li>
+                    </ul>
+                </div>
+
+                <form onsubmit="event.preventDefault(); alert('Thank you! You have been added to our early access priority list. We will notify you when Member Accounts go live.'); this.reset();">
+                    <div class="form-group" style="margin-bottom: 0.85rem;">
+                        <label style="font-size: 0.85rem; font-weight: 600;">Get Notified on Launch</label>
+                        <input type="email" class="form-control" placeholder="Enter your email for launch invite..." required="">
+                    </div>
+                    <button type="submit" class="btn btn-outline" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                        <i class="fas fa-bell"></i> Notify Me When Available
+                    </button>
+                </form>
+            </div>
+
+            <div class="sidebar-widget" style="background: var(--light-blue);">
+                <h3 class="sidebar-title">Community Code of Conduct</h3>
+                <ul style="list-style: none; font-size: 0.9rem; color: var(--text-dark);">
+                    <li style="margin-bottom: 0.6rem;"><i class="fas fa-check" style="color: var(--green); margin-right: 8px;"></i> Be respectful and constructive in critiques.</li>
+                    <li style="margin-bottom: 0.6rem;"><i class="fas fa-check" style="color: var(--green); margin-right: 8px;"></i> Cite sources when sharing statistical claims.</li>
+                    <li style="margin-bottom: 0.6rem;"><i class="fas fa-check" style="color: var(--green); margin-right: 8px;"></i> Zero tolerance for spam, hate speech, or harassment.</li>
+                    <li><i class="fas fa-envelope" style="color: var(--primary-blue); margin-right: 8px;"></i> Contact: <strong>community@viralson.com</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+<?php get_footer(); ?>

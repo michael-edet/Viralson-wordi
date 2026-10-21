@@ -1,171 +1,358 @@
 <?php
 /**
- * Viral Son Main Blog & Front Page Template
+ * Viral Son - Index / Home Page Template
  *
  * @package ViralSon
  */
 get_header();
 ?>
 
-<main id="primary" class="site-main">
-    <div class="container" style="padding-top: 30px;">
-        <!-- Top Lead Story / Featured Section -->
-        <?php
-        $featured_query = new WP_Query(array(
-            'posts_per_page'      => 1,
-            'post__in'            => get_option('sticky_posts'),
-            'ignore_sticky_posts' => 1,
-        ));
+<main>
 
-        // If no sticky post, grab the most recent published post
-        if (!$featured_query->have_posts()) {
-            $featured_query = new WP_Query(array('posts_per_page' => 1));
-        }
+        
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container hero-container">
+        <div class="hero-content">
+            <span class="post-category" style="margin-bottom: 1rem; font-size: 0.9rem;">Trending Right Now</span>
+            <h1 class="hero-title">Discover What's Shaping Tomorrow</h1>
+            <p class="hero-subtitle">Your premier digital destination for breaking stories, in-depth technology analyses, music releases, and thought-provoking lifestyle features.</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="#featured" class="btn">Explore Latest Stories</a>
+                <a href="news/index.html" class="btn btn-outline">Browse News Hub</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1552664730-d307ca884978%3Fauto%3Dformat%26fit%3Dcrop%26w%3D1000%26q%3D80?_a=BBFAAAAA0" alt="Viral Son Blogging Studio" loading="lazy">
+        </div>
+    </div>
+</section>
 
-        if ($featured_query->have_posts()) :
-            while ($featured_query->have_posts()) : $featured_query->the_post();
-                $featured_id = get_the_ID();
-        ?>
-            <section class="featured-hero" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 36px; box-shadow: var(--shadow-sm);">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-                    <div style="position: relative; min-height: 340px; background: var(--medium-gray);">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('large', array('style' => 'width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;')); ?>
-                            <?php else : ?>
-                                <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
-                                    <span style="font-size: 3rem; color: var(--primary-blue); font-weight: 800;">VS FEATURED</span>
-                                </div>
-                            <?php endif; ?>
-                        </a>
-                    </div>
-                    <div style="padding: 36px 32px; display: flex; flex-direction: column; justify-content: center;">
-                        <div class="post-meta-unboxed" style="margin-bottom: 12px;">
-                            <span class="category"><?php the_category(' · '); ?></span>
-                            <span aria-hidden="true">·</span>
-                            <time datetime="<?php echo esc_attr(get_the_date('c')); ?>"><?php echo esc_html(get_the_date()); ?></time>
-                            <span aria-hidden="true">·</span>
-                            <span><?php echo esc_html(viralson_estimated_reading_time()); ?></span>
-                        </div>
-                        <h1 style="font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; line-height: 1.25; margin-bottom: 16px; color: var(--text-dark);">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </h1>
-                        <p style="font-size: 1.05rem; color: var(--text-light); line-height: 1.6; margin-bottom: 24px;">
-                            <?php echo esc_html(wp_trim_words(get_the_excerpt(), 28)); ?>
-                        </p>
-                        <div>
-                            <a href="<?php the_permalink(); ?>" class="btn">
-                                <?php esc_html_e('Read Full Feature', 'viralson'); ?> <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+<!-- Breaking News Ticker -->
+<section class="breaking-news">
+    <div class="container breaking-container">
+        <span class="breaking-label">HOT STORY</span>
+        <div class="breaking-text">
+            <a href="posts/global-climate-summit/index.html" style="color: #ffffff; text-decoration: none;">Global Climate Summit reaches historic agreement on carbon emissions - 195 countries commit to net-zero framework →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Posts Section -->
+<section class="featured-posts" id="featured" style="padding: 4rem 0;">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+            <h2 class="section-title" style="margin-bottom: 0;">Featured Articles</h2>
+            <a href="technology/index.html" style="color: var(--primary-blue); font-weight: 600;">View All Tech →</a>
+        </div>
+
+        <div class="posts-grid">
+            <!-- Card 1 -->
+            <article class="post-card">
+                <div class="post-image">
+                    <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1586227740560-8cf2732c1531%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Artificial Intelligence" loading="lazy">
+                </div>
+                <div class="post-content">
+                    <span class="post-category tech">Technology</span>
+                    <h3 class="post-title"><a href="posts/future-of-ai/index.html">The Future of AI in Everyday Life</a></h3>
+                    <p class="post-excerpt">How artificial intelligence and agentic models are transforming our daily workflows, smart homes, and creative routines.</p>
+                    <div class="post-meta">
+                        <span>June 15, 2026</span>
+                        <span>5 min read</span>
                     </div>
                 </div>
-            </section>
-        <?php
-            endwhile;
-            wp_reset_postdata();
-        endif;
-        ?>
+            </article>
 
-        <!-- Ad Slot -->
-        <?php get_template_part('template-parts/ad-banner'); ?>
+            <!-- Card 2 -->
+            <article class="post-card">
+                <div class="post-image">
+                    <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1498837167922-ddd27525d352%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Productive Habits" loading="lazy">
+                </div>
+                <div class="post-content">
+                    <span class="post-category life">Lifestyle</span>
+                    <h3 class="post-title"><a href="posts/productive-habits/index.html">10 Habits of Highly Productive People</a></h3>
+                    <p class="post-excerpt">Discover actionable morning rituals, deep work protocols, and cognitive strategies that top performers use daily.</p>
+                    <div class="post-meta">
+                        <span>June 12, 2026</span>
+                        <span>4 min read</span>
+                    </div>
+                </div>
+            </article>
 
-        <!-- Two-Column Layout: Main Feed & Sidebar -->
-        <div style="display: grid; grid-template-columns: 1fr 340px; gap: 36px; margin-top: 30px;" class="main-layout-grid">
-            <!-- Main Content Area -->
-            <div class="content-area">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 2px solid var(--border-color); padding-bottom: 12px;">
-                    <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--text-dark); position: relative; margin: 0;">
-                        <?php esc_html_e('Latest Dispatch & Reports', 'viralson'); ?>
-                    </h2>
-                    <a href="<?php echo esc_url(home_url('/audio/')); ?>" style="font-size: 0.9rem; font-weight: 600; color: var(--primary-blue);">
-                        <?php esc_html_e('Browse Audio Hub →', 'viralson'); ?>
-                    </a>
+            <!-- Card 3 -->
+            <article class="post-card">
+                <div class="post-image">
+                    <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Sleep Science" loading="lazy">
+                </div>
+                <div class="post-content">
+                    <span class="post-category life">Health &amp; Wellness</span>
+                    <h3 class="post-title"><a href="posts/better-sleep-science/index.html">The Science Behind Better Sleep</a></h3>
+                    <p class="post-excerpt">Understanding circadian rhythm biology, blue light mitigation, and clinical protocols for rejuvenating rest.</p>
+                    <div class="post-meta">
+                        <span>June 10, 2026</span>
+                        <span>6 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4: Google Ads In-Feed Sponsored Scene -->
+            <div class="infeed-grid-item">
+                
+                
+                
+                
+                
+                
+                
+
+<!-- Google Ads Scene: In-Feed Native Card Unit -->
+<div class="google-ad-wrapper infeed-ad-wrapper" data-ad-type="infeed">
+    <div class="ad-infeed-card">
+        <div class="ad-infeed-image">
+            <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Sponsored Content" loading="lazy">
+            <span class="ad-sponsored-flag">Sponsored Ad</span>
+        </div>
+        <div class="ad-infeed-content">
+            <div class="ad-infeed-meta">
+                <span class="ad-source-brand"><i class="fab fa-google"></i> Google Cloud AI</span>
+                <span class="ad-infeed-bullet">•</span>
+                <span class="ad-infeed-notice">Recommended for you</span>
+            </div>
+            <h3 class="ad-infeed-title">
+                <a href="https://cloud.google.com/products/gemini" target="_blank" rel="noopener noreferrer">
+                    Supercharge Full-Stack Development with Gemini 1.5 Pro
+                </a>
+            </h3>
+            <p class="ad-infeed-desc">
+                Build agentic reasoning pipelines, analyze 1M token contexts, and deploy production ML microservices in minutes.
+            </p>
+            <div class="ad-infeed-footer">
+                <span class="ad-action-hint">Promoted Story</span>
+                <a href="https://cloud.google.com/products/gemini" target="_blank" rel="noopener noreferrer" class="ad-infeed-btn">
+                    Visit Website <i class="fas fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest News Section -->
+<section class="news" style="padding: 4rem 0; background-color: var(--white);">
+    <div class="container">
+        <h2 class="section-title">Latest Global News</h2>
+        <div class="news-container">
+            <div class="news-main">
+                <!-- Large Highlight Card -->
+                <div class="news-card featured">
+                    <div class="news-image">
+                        <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Global Summit" loading="lazy">
+                    </div>
+                    <div class="news-content">
+                        <span class="post-category news">Breaking News</span>
+                        <h3 class="news-title"><a href="posts/global-climate-summit/index.html">Global Summit Addresses Climate Change Solutions</a></h3>
+                        <p class="news-date">June 18, 2026 • 7 min read</p>
+                        <p style="color: var(--text-light); margin-bottom: 1.2rem;">World leaders gather to formalize actionable timelines for emissions caps, renewable infrastructure investments, and biodiversity preservation.</p>
+                        <a href="posts/global-climate-summit/index.html" class="btn">Read Full Story</a>
+                    </div>
                 </div>
 
-                <div class="article-grid" style="margin-top: 0;">
-                    <?php
-                    if (have_posts()) :
-                        while (have_posts()) : the_post();
-                            // Skip the sticky post if already shown in the top hero
-                            if (isset($featured_id) && get_the_ID() === $featured_id && is_home() && !is_paged()) {
-                                continue;
-                            }
-                            get_template_part('template-parts/content-card');
-                        endwhile;
+                <!-- Secondary Cards Grid -->
+                <div class="two-col-grid">
+                    <div class="news-card">
+                        <div class="news-image" style="height: 160px;">
+                            <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1611224923853-80b023f02d71%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Smartphone tech" loading="lazy">
+                        </div>
+                        <div class="news-content" style="padding: 1.2rem;">
+                            <span class="post-category tech">Gadgets</span>
+                            <h4 style="font-size: 1.15rem; margin-bottom: 0.5rem;"><a href="posts/revolutionary-foldable-phone/index.html">Revolutionary Foldable Phone Breaks New Ground</a></h4>
+                            <p class="news-date">June 17, 2026</p>
+                        </div>
+                    </div>
 
-                        the_posts_pagination(array(
-                            'mid_size'  => 2,
-                            'prev_text' => __('&larr; Previous', 'viralson'),
-                            'next_text' => __('Next &rarr;', 'viralson'),
-                        ));
-                    else :
-                    ?>
-                        <p><?php esc_html_e('No articles found in this newsfeed.', 'viralson'); ?></p>
-                    <?php endif; ?>
+                    <div class="news-card">
+                        <div class="news-image" style="height: 160px;">
+                            <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1551135049-8a33b5883817%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Market growth" loading="lazy">
+                        </div>
+                        <div class="news-content" style="padding: 1.2rem;">
+                            <span class="post-category news">Markets</span>
+                            <h4 style="font-size: 1.15rem; margin-bottom: 0.5rem;"><a href="news/index.html">Tech Sector Surges as Clean Energy Index Sets Records</a></h4>
+                            <p class="news-date">June 16, 2026</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Sidebar -->
-            <aside class="sidebar-area">
-                <?php if (is_active_sidebar('sidebar-main')) : ?>
-                    <?php dynamic_sidebar('sidebar-main'); ?>
-                <?php else : ?>
-                    <!-- Default Widget: Newsletter -->
-                    <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; margin-bottom: 28px; box-shadow: var(--shadow-sm);">
-                        <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; color: var(--text-dark);">
-                            <i class="fas fa-envelope-open-text" style="color: var(--primary-blue); margin-right: 8px;"></i>
-                            <?php esc_html_e('The Daily Briefing', 'viralson'); ?>
-                        </h3>
-                        <p style="font-size: 0.88rem; color: var(--text-light); line-height: 1.5; margin-bottom: 16px;">
-                            <?php esc_html_e('Join 30,000+ readers. Direct geopolitical and technology intelligence straight to your inbox.', 'viralson'); ?>
-                        </p>
-                        <form onsubmit="event.preventDefault(); alert('Subscribed to Viral Son newsletter!');" style="display: flex; flex-direction: column; gap: 10px;">
-                            <input type="email" placeholder="<?php esc_attr_e('Enter your work email...', 'viralson'); ?>" required style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--input-bg); color: var(--text-dark); font-size: 0.9rem;">
-                            <button type="submit" class="btn" style="width: 100%;">
-                                <?php esc_html_e('Subscribe Free', 'viralson'); ?>
-                            </button>
-                        </form>
-                    </div>
+            <!-- News Sidebar -->
+            <aside class="news-sidebar">
+                <!-- Sidebar Google Ads Display Unit -->
+                
+                
 
-                    <!-- Default Widget: Audio Releases Spotlight -->
-                    <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; margin-bottom: 28px; box-shadow: var(--shadow-sm);">
-                        <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 16px; color: var(--text-dark);">
-                            <i class="fas fa-music" style="color: var(--teal); margin-right: 8px;"></i>
-                            <?php esc_html_e('Latest Music Downloads', 'viralson'); ?>
-                        </h3>
-                        <?php
-                        $audio_sidebar = new WP_Query(array(
-                            'post_type'      => 'audio_release',
-                            'posts_per_page' => 3,
-                        ));
-                        if ($audio_sidebar->have_posts()) :
-                            while ($audio_sidebar->have_posts()) : $audio_sidebar->the_post();
-                                $artist = get_post_meta(get_the_ID(), '_viralson_artist', true);
-                        ?>
-                            <div style="display: flex; gap: 12px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color);">
-                                <div style="width: 50px; height: 50px; border-radius: 4px; overflow: hidden; background: var(--medium-gray); flex-shrink: 0;">
-                                    <?php if (has_post_thumbnail()) the_post_thumbnail('thumbnail', array('style' => 'width: 100%; height: 100%; object-fit: cover;')); ?>
-                                </div>
-                                <div style="flex: 1;">
-                                    <h4 style="font-size: 0.92rem; font-weight: 700; line-height: 1.3; margin-bottom: 4px;">
-                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                    </h4>
-                                    <span style="font-size: 0.78rem; color: var(--text-light);"><?php echo esc_html($artist); ?> · FLAC / MP3</span>
-                                </div>
-                            </div>
-                        <?php
-                            endwhile;
-                            wp_reset_postdata();
-                        else :
-                        ?>
-                            <p style="font-size: 0.85rem; color: var(--text-light);"><?php esc_html_e('Check back soon for new single premieres.', 'viralson'); ?></p>
-                        <?php endif; ?>
-                    </div>
-                <?php endif; ?>
+<!-- Google Ads Scene: Sidebar Display Unit (300x250 / 300x600 Half-Page) -->
+<div class="google-ad-wrapper sidebar-ad-wrapper" data-ad-type="sidebar">
+    <div class="google-ad-header">
+        <span class="ad-label">SPONSORED</span>
+        <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" class="adchoices-link" title="Ads by Google">
+            <i class="fab fa-google" style="font-size: 0.7rem; margin-right: 2px;"></i> Ad
+        </a>
+    </div>
+
+    <!-- Google AdSense Tag -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9481237418920194" data-ad-slot="4920192831" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
+
+    <!-- Visual Ad Scene Display -->
+    <div class="ad-creative-scene sidebar-scene">
+        <div class="ad-scene-media">
+            <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1511707171634-5f897ff02aa9%3Fauto%3Dformat%26fit%3Dcrop%26w%3D400%26q%3D80?_a=BBFAAAAA0" alt="Google Hardware Showcase" loading="lazy">
+            <span class="ad-sponsored-pill">Featured Hardware</span>
+        </div>
+        <div class="ad-scene-content">
+            <h4 class="ad-scene-title">Google Pixel 9 Pro Fold</h4>
+            <p class="ad-scene-desc">The thinnest foldable with Super Actua Flex displays and generative Gemini intelligence built right in.</p>
+            <div class="ad-scene-footer">
+                <span class="ad-price-tag">From $1,799</span>
+                <a href="https://store.google.com/" target="_blank" rel="noopener noreferrer" class="ad-cta-btn small">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">Trending Now</h3>
+                    <ul class="trending-list">
+                        <li class="trending-item">
+                            <a href="posts/minimalism-lifestyle/index.html" class="trending-title">Minimalism: Simplifying Your Life for True Joy</a>
+                            <div class="trending-meta"><span>Lifestyle</span> • <span>14.2K views</span></div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="posts/summer-music-festival/index.html" class="trending-title">Summer Music Festival 2026 Announces Lineup</a>
+                            <div class="trending-meta"><span>Entertainment</span> • <span>18.5K views</span></div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="download/music/index.html" class="trending-title">Single Download: "Midnight Whispers" - Aurora</a>
+                            <div class="trending-meta"><span>Music Release</span> • <span>9.8K downloads</span></div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="posts/midnight-dreams-track/index.html" class="trending-title">Audio Feature: "Midnight Dreams" by Alex Parker</a>
+                            <div class="trending-meta"><span>Exclusive</span> • <span>7.1K views</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget" style="background: var(--light-blue);">
+                    <h3 class="sidebar-title" style="border-bottom-color: var(--primary-blue);">Join Our Community</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-dark); margin-bottom: 1.2rem;">Engage with over 30,000 passionate writers, creators, and readers in topic channels.</p>
+                    <a href="community/index.html" class="btn btn-purple" style="width: 100%;">Enter Community Hub</a>
+                </div>
             </aside>
         </div>
     </div>
+</section>
+
+<!-- Entertainment & Music Spotlights -->
+<section class="entertainment" style="padding: 4rem 0;">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.8rem; flex-wrap: wrap; gap: 1rem;">
+            <h2 class="section-title" style="margin-bottom: 0;">Entertainment &amp; Media</h2>
+            <a href="entertainment/index.html" style="color: var(--primary-blue); font-weight: 600;">Browse All Entertainment →</a>
+        </div>
+
+        <div class="posts-grid">
+            <article class="post-card">
+                <div class="post-image">
+                    <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1489599809505-7c8e1c8bfc26%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Music Festival" loading="lazy">
+                </div>
+                <div class="post-content">
+                    <span class="post-category ent">Festival</span>
+                    <h3 class="post-title"><a href="posts/summer-music-festival/index.html">Summer Music Festival Lineup Revealed</a></h3>
+                    <p class="post-excerpt">Headliners, stage breakdowns, and acoustic highlights for this summer's most anticipated outdoor festival.</p>
+                    <div class="post-meta">
+                        <span>June 14, 2026</span>
+                        <a href="posts/summer-music-festival/index.html" style="color: var(--primary-blue); font-weight: 600;">Read More →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <div class="post-image">
+                    <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Midnight Whispers track" loading="lazy">
+                </div>
+                <div class="post-content">
+                    <span class="post-category ent">Single Release</span>
+                    <h3 class="post-title"><a href="download/music/index.html">"Midnight Whispers" by Aurora (Audio)</a></h3>
+                    <p class="post-excerpt">Experience the mesmerizing vocal harmonies and electronic textures. Available for high-res lossless download.</p>
+                    <div class="post-meta">
+                        <span>Audio Single</span>
+                        <a href="download/music/index.html" class="btn btn-green" style="padding: 4px 12px; font-size: 0.85rem;">Download</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <div class="post-image">
+                    <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1514525253161-7a46d19cd819%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Midnight Dreams track" loading="lazy">
+                </div>
+                <div class="post-content">
+                    <span class="post-category ent">Track Premiere</span>
+                    <h3 class="post-title"><a href="posts/midnight-dreams-track/index.html">"Midnight Dreams" by Alex Parker</a></h3>
+                    <p class="post-excerpt">Interactive audio player, track stems, and behind-the-scenes recording diary of Parker's newest album preview.</p>
+                    <div class="post-meta">
+                        <span>June 9, 2026</span>
+                        <a href="posts/midnight-dreams-track/index.html" style="color: var(--primary-blue); font-weight: 600;">Listen Now →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Community Showcase Section -->
+<section style="padding: 4rem 0; background: linear-gradient(135deg, var(--light-blue) 0%, var(--surface-bg) 100%); border-top: 1px solid var(--border-color);">
+    <div class="container split-feature-layout">
+        <div>
+            <span class="post-category" style="background: rgba(63, 81, 181, 0.15); color: #3f51b5; margin-bottom: 1rem;">Collaborative Hub</span>
+            <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: var(--dark-blue); margin-bottom: 1.2rem;">Be Part of the Conversation</h2>
+            <p style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: 1.5rem;">Join a community of thought leaders, indie writers, and curious readers sharing perspectives on tomorrow's world.</p>
+            <ul style="list-style: none; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: var(--green);"></i> Exclusive member articles &amp; early preview downloads</li>
+                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: var(--green);"></i> Submit guest editorials and articles for review</li>
+                <li style="display: flex; align-items: center; gap: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: var(--green);"></i> Moderated discussion boards across all key topics</li>
+            </ul>
+            <a href="community/index.html" class="btn">Explore Community</a>
+        </div>
+        <div style="background: var(--card-bg); padding: 2.2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+            <h3 style="font-size: 1.4rem; color: var(--dark-blue); margin-bottom: 0.5rem;">Send Us a Message</h3>
+            <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 1.5rem;">Have a story pitch, question, or feedback for the editors?</p>
+            <form onsubmit="event.preventDefault(); alert('Message sent successfully! Our editorial desk will reply shortly.'); this.reset();">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder="Your Full Name" required="">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" placeholder="Your Email Address" required="">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea class="form-control" placeholder="How can we collaborate?" required="" style="min-height: 90px;"></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    
 </main>
 
 <?php get_footer(); ?>
