@@ -1,0 +1,14 @@
+{
+  "name": "viralson",
+  "version": "1.0.0",
+  "description": "Viral Son - Modern Blogging Platform",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node --check server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -1,0 +1,1051 @@
+<!DOCTYPE html><html lang="en">
+<!-- Mirrored from https://viralson.netlify.app/entertainment/ by HTTrack Website Copier/3.x [XR&CO], Mon, 19 Oct 2026 07:09:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=08327584-10e6-45a5-8545-f9db7f804f25
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment &amp; Culture | Viral Son</title>
+    <meta name="description" content="Discover the latest in music releases, festivals, cinema, artist profiles, and entertainment culture.">
+    
+    <!-- OpenGraph Metadata -->
+    <meta property="og:title" content="Entertainment &amp; Culture | Viral Son">
+    <meta property="og:description" content="Discover the latest in music releases, festivals, cinema, artist profiles, and entertainment culture.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://viralson.com/entertainment/">
+    
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="../Assets/CD/CSS/index.css">
+
+    <!-- Google AdSense Official Script -->
+    <script async="" src="../../pagead2.googlesyndication.com/pagead/js/fb1a6.txt?client=ca-pub-9481237418920194" crossorigin="anonymous"></script>
+
+    <!-- Theme Initialization to prevent FOUC -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('viralson_theme');
+                if (savedTheme) {
+                    document.documentElement.setAttribute('data-theme', savedTheme);
+                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body class="">
+    <!-- Global Reusable Page Loader -->
+    <!-- Reusable Page Loader Component -->
+<div class="page-loader" id="pageLoader">
+    <div class="vs-logo">VS</div>
+    <div class="loading-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</div>
+
+<script>
+    // Smooth loader disappearance on page ready
+    document.addEventListener('DOMContentLoaded', function() {
+        const loader = document.getElementById('pageLoader');
+        if (loader) {
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    loader.classList.add('hidden');
+                }, 300);
+            });
+            setTimeout(function() {
+                loader.classList.add('hidden');
+            }, 2500);
+        }
+    });
+</script>
+
+
+    <!-- Dynamic Header -->
+    <!-- Header Component with Search, Dark Mode & Navigation -->
+<header>
+    <div class="container header-container">
+        <a href="../index.html" class="logo">
+            <div class="logo-icon">VS</div>
+            <div class="logo-text">Viral Son</div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-wrapper">
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link ">Home</a></li>
+                <li><a href="../news/index.html" class="nav-link ">News</a></li>
+                <li><a href="index.html" class="nav-link active">Entertainment</a></li>
+                <li><a href="../technology/index.html" class="nav-link ">Technology</a></li>
+                <li><a href="../sports/index.html" class="nav-link ">Sports</a></li>
+                <li><a href="../lifestyle/index.html" class="nav-link ">Lifestyle</a></li>
+                <li><a href="../community/index.html" class="nav-link ">Community</a></li>
+                <li><a href="../about/index.html" class="nav-link ">About</a></li>
+                <li><a href="../contact/index.html" class="nav-link ">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header Actions: Search, Dark Mode, Mobile Toggle -->
+        <div class="header-actions">
+            <!-- Search Button -->
+            <button class="action-btn search-trigger" id="searchOpenBtn" aria-label="Open search dialog" title="Search site (Press /)">
+                <i class="fas fa-search"></i>
+                <span class="search-hint">Search...</span>
+            </button>
+
+            <!-- Dark Mode Toggle Button -->
+            <button class="action-btn theme-toggle" id="themeToggleBtn" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Site-Wide Search Modal Overlay -->
+<div class="search-modal-backdrop" id="searchModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="search-modal-card">
+        <div class="search-input-wrapper">
+            <i class="fas fa-search search-input-icon"></i>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search news, tech, music, guides, topics..." autocomplete="off">
+            <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Clear search input" style="display: none;">
+                <i class="fas fa-times"></i>
+            </button>
+            <button type="button" id="searchCloseBtn" class="search-close-btn" aria-label="Close search">
+                <span class="esc-badge">ESC</span>
+            </button>
+        </div>
+
+        <div class="search-results-container">
+            <div id="searchResultsSummary" class="search-summary" style="display: none;"></div>
+            <ul id="searchResultsList" class="search-results-list"></ul>
+            <div id="searchEmptyState" class="search-empty-state">
+                <i class="fas fa-search" style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 0.8rem; opacity: 0.6;"></i>
+                <p>Type keywords to search across articles, audio downloads, and topic hubs.</p>
+                <div class="search-quick-tags">
+                    <span>Popular:</span>
+                    <button type="button" class="quick-tag-btn" onclick="quickSearch('Climate')">Climate</button>
+                    <button type="button" class="quick-tag-btn" onclick="quickSearch('AI')">AI</button>
+                    <button type="button" class="quick-tag-btn" onclick="quickSearch('Phone')">Phone</button>
+                    <button type="button" class="quick-tag-btn" onclick="quickSearch('Music')">Music</button>
+                    <button type="button" class="quick-tag-btn" onclick="quickSearch('Productivity')">Productivity</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Header Navigation, Search, and Dark Mode Logic
+    (function() {
+        // --- 1. Dark Mode Functionality ---
+        const themeBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+                themeBtn.setAttribute('title', 'Switch to light mode');
+            } else {
+                themeIcon.className = 'fas fa-moon';
+                themeBtn.setAttribute('title', 'Switch to dark mode');
+            }
+        }
+
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        updateThemeIcon(currentTheme);
+
+        if (themeBtn) {
+            themeBtn.addEventListener('click', function() {
+                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                const newTheme = isDark ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('viralson_theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+        }
+
+        // --- 2. Mobile Menu Toggle ---
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        if (mobileBtn && navMenu) {
+            mobileBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                if (navMenu.classList.contains('active')) {
+                    menuIcon.className = 'fas fa-times';
+                } else {
+                    menuIcon.className = 'fas fa-bars';
+                }
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('header')) {
+                    navMenu.classList.remove('active');
+                    if (menuIcon) menuIcon.className = 'fas fa-bars';
+                }
+            });
+        }
+
+        // --- 3. Site-Wide Search Functionality ---
+        const searchModal = document.getElementById('searchModal');
+        const searchOpenBtn = document.getElementById('searchOpenBtn');
+        const searchCloseBtn = document.getElementById('searchCloseBtn');
+        const searchInput = document.getElementById('searchInput');
+        const searchClearBtn = document.getElementById('searchClearBtn');
+        const resultsList = document.getElementById('searchResultsList');
+        const resultsSummary = document.getElementById('searchResultsSummary');
+        const emptyState = document.getElementById('searchEmptyState');
+
+        let searchData = [];
+        let dataFetched = false;
+
+        async function fetchSearchIndex() {
+            if (dataFetched) return;
+            try {
+                const res = await fetch('../search-index.json');
+                if (res.ok) {
+                    searchData = await res.json();
+                    dataFetched = true;
+                }
+            } catch (err) {
+                console.warn('Could not load search index:', err);
+            }
+        }
+
+        function openSearch() {
+            fetchSearchIndex();
+            searchModal.classList.add('open');
+            searchModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => searchInput.focus(), 50);
+        }
+
+        function closeSearch() {
+            searchModal.classList.remove('open');
+            searchModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        if (searchOpenBtn) searchOpenBtn.addEventListener('click', openSearch);
+        if (searchCloseBtn) searchCloseBtn.addEventListener('click', closeSearch);
+
+        // Click outside modal card to close
+        searchModal.addEventListener('click', function(e) {
+            if (e.target === searchModal) {
+                closeSearch();
+            }
+        });
+
+        // Keyboard shortcuts: '/' or 'Cmd/Ctrl+K' to open, ESC to close
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && searchModal.classList.contains('open')) {
+                closeSearch();
+            } else if ((e.key === '/' || (e.ctrlKey && e.key === 'k') || (e.metaKey && e.key === 'k')) && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+                e.preventDefault();
+                openSearch();
+            }
+        });
+
+        if (searchClearBtn) {
+            searchClearBtn.addEventListener('click', function() {
+                searchInput.value = '';
+                searchClearBtn.style.display = 'none';
+                executeSearch('');
+                searchInput.focus();
+            });
+        }
+
+        window.quickSearch = function(term) {
+            searchInput.value = term;
+            searchClearBtn.style.display = 'block';
+            executeSearch(term);
+        };
+
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.trim();
+                searchClearBtn.style.display = query.length > 0 ? 'block' : 'none';
+                executeSearch(query);
+            });
+        }
+
+        function executeSearch(query) {
+            if (!query || query.length < 2) {
+                resultsList.innerHTML = '';
+                resultsSummary.style.display = 'none';
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            const qLower = query.toLowerCase();
+            const matches = searchData.filter(item => {
+                const inTitle = item.title.toLowerCase().includes(qLower);
+                const inExcerpt = (item.excerpt || '').toLowerCase().includes(qLower);
+                const inCategory = (item.category || '').toLowerCase().includes(qLower);
+                const inTags = (item.tags || []).some(t => t.toLowerCase().includes(qLower));
+                return inTitle || inExcerpt || inCategory || inTags;
+            });
+
+            emptyState.style.display = 'none';
+            resultsSummary.style.display = 'block';
+            resultsSummary.innerHTML = `Found <strong>${matches.length}</strong> result${matches.length === 1 ? '' : 's'} for "<strong>${escapeHtml(query)}</strong>"`;
+
+            if (matches.length === 0) {
+                resultsList.innerHTML = `
+                    <li class="search-no-results">
+                        <i class="far fa-frown" style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text-light);"></i>
+                        <p>No matches found. Try searching for "climate", "foldable", "music", or "AI".</p>
+                    </li>
+                `;
+                return;
+            }
+
+            resultsList.innerHTML = matches.map(item => `
+                <li class="search-result-item">
+                    <a href="${item.url}" class="search-result-link">
+                        <div class="search-result-meta">
+                            <span class="search-category-pill">${item.category}</span>
+                            <span class="search-result-date">${item.date || ''}</span>
+                        </div>
+                        <h4 class="search-result-title">${highlightMatch(item.title, query)}</h4>
+                        <p class="search-result-excerpt">${highlightMatch(item.excerpt || '', query)}</p>
+                    </a>
+                </li>
+            `).join('');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function highlightMatch(text, query) {
+            if (!text || !query) return escapeHtml(text || '');
+            const escaped = escapeHtml(text);
+            const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            return escaped.replace(regex, '<mark class="search-highlight">$1</mark>');
+        }
+    })();
+</script>
+
+
+    <!-- Top Leaderboard Google Ads Scene (On Every Page) -->
+    
+    <div class="container ad-leaderboard-container">
+        
+        
+
+<!-- Google Ads Scene: Top Leaderboard Banner (728x90 / 970x90 / 320x50 Responsive) -->
+<div class="google-ad-wrapper leaderboard-wrapper" data-ad-type="leaderboard">
+    <div class="google-ad-header">
+        <span class="ad-label">ADVERTISEMENT</span>
+        <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" class="adchoices-link" title="Ads by Google / AdChoices">
+            <span>AdChoices</span>
+            <svg class="adchoices-icon" viewBox="0 0 12 12" width="12" height="12">
+                <path fill="currentColor" d="M1 1h10v10H1V1zm1 1v8h8V2H2zm2 2h4v1H4V4zm0 2h4v1H4V6zm0 2h2v1H4V8z"></path>
+            </svg>
+        </a>
+    </div>
+    
+    <!-- Google AdSense Tag -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9481237418920194" data-ad-slot="8947291032" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+
+    <!-- Visual Ad Scene Display -->
+    <div class="ad-creative-scene leaderboard-scene">
+        <div class="ad-scene-brand">
+            <span class="ad-badge-google"><i class="fab fa-google"></i> Google Cloud</span>
+            <h4 class="ad-scene-title">Build Intelligence Faster with Vertex AI on Google Cloud</h4>
+            <p class="ad-scene-desc">Access state-of-the-art multimodal Gemini models, enterprise embeddings, and serverless vector search. Start with $300 free credits.</p>
+        </div>
+        <div class="ad-scene-cta">
+            <a href="https://cloud.google.com/vertex-ai" target="_blank" rel="noopener noreferrer" class="ad-cta-btn">
+                <span>Start Free</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+    
+
+    <!-- Main Content Area -->
+    <main>
+        
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <span class="post-category ent" style="margin-bottom: 0.8rem;">Pop Culture &amp; Arts</span>
+        <h1>Entertainment &amp; Music</h1>
+        <p>Your gateway to festival lineups, exclusive audio premieres, album reviews, streaming hits, and celebrity features.</p>
+    </div>
+</section>
+
+<div class="container">
+    <!-- Category Filter Pills with Auto-Selection Tags -->
+    <div class="filter-pills" id="entFilterPills">
+        <span class="filter-pill active" data-tag="all">All Entertainment</span>
+        <span class="filter-pill" data-tag="festivals">Music Festivals</span>
+        <span class="filter-pill" data-tag="music">Music Releases</span>
+        <span class="filter-pill" data-tag="movies">Movies &amp; TV</span>
+        <span class="filter-pill" data-tag="interviews">Interviews</span>
+    </div>
+
+    <div class="posts-grid">
+        <!-- Card 1: Festival -->
+        <article class="post-card" data-tags="festivals live music concerts summer lineup">
+            <div class="post-image">
+                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1489599809505-7c8e1c8bfc26%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Summer Music Festival" loading="lazy">
+            </div>
+            <div class="post-content">
+                <span class="post-category ent">Festival Preview</span>
+                <h3 class="post-title"><a href="../posts/summer-music-festival/index.html">Summer Music Festival Lineup Announced</a></h3>
+                <p class="post-excerpt">Headliners, stage breakdowns, and acoustic showcases for this summer's most anticipated outdoor festival.</p>
+                <div class="post-meta">
+                    <span>June 14, 2026</span>
+                    <a href="../posts/summer-music-festival/index.html" style="color: var(--primary-blue); font-weight: 600;">Read Review →</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 2: Music & Movie Release News -->
+        <article class="post-card" data-tags="music releases audio aurora spotify youtube">
+            <div class="post-image">
+                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Midnight Whispers Track" loading="lazy">
+            </div>
+            <div class="post-content">
+                <span class="post-category ent">Music Release &amp; Video</span>
+                <h3 class="post-title"><a href="../download/music/index.html">"Midnight Whispers" by Aurora (Official Release)</a></h3>
+                <p class="post-excerpt">Ambient electronic textures meet soulful acoustic vocals. Preview with interactive YouTube, Spotify, and Apple Music widgets.</p>
+                <div class="post-meta">
+                    <span>Official Release</span>
+                    <a href="../download/music/index.html" class="btn btn-green" style="padding: 4px 12px; font-size: 0.85rem;">Watch &amp; Listen</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- In-Feed Google Ads Card -->
+        <div class="infeed-grid-item" data-tags="streaming audio sound entertainment music">
+            
+            
+            
+            
+            
+            
+            
+
+<!-- Google Ads Scene: In-Feed Native Card Unit -->
+<div class="google-ad-wrapper infeed-ad-wrapper" data-ad-type="infeed">
+    <div class="ad-infeed-card">
+        <div class="ad-infeed-image">
+            <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1511379938547-c1f69419868d%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Sponsored Content" loading="lazy">
+            <span class="ad-sponsored-flag">Sponsored Ad</span>
+        </div>
+        <div class="ad-infeed-content">
+            <div class="ad-infeed-meta">
+                <span class="ad-source-brand"><i class="fab fa-google"></i> Spotify HiFi &amp; Spatial</span>
+                <span class="ad-infeed-bullet">•</span>
+                <span class="ad-infeed-notice">Recommended for you</span>
+            </div>
+            <h3 class="ad-infeed-title">
+                <a href="https://spotify.com/" target="_blank" rel="noopener noreferrer">
+                    Experience Studio Masters in 24-Bit Lossless Audio
+                </a>
+            </h3>
+            <p class="ad-infeed-desc">
+                Stream over 100 million tracks in studio-grade uncompressed audio with Dolby Atmos binaural rendering on any headphones.
+            </p>
+            <div class="ad-infeed-footer">
+                <span class="ad-action-hint">Promoted Story</span>
+                <a href="https://spotify.com/" target="_blank" rel="noopener noreferrer" class="ad-infeed-btn">
+                    Visit Website <i class="fas fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+
+        <!-- Card 3: Movie Soundtrack & Trailer -->
+        <article class="post-card" data-tags="movies cinema streaming tv film trailer youtube">
+            <div class="post-image">
+                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1536440136628-849c177e76a1%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Sci-fi Cinema Release" loading="lazy">
+            </div>
+            <div class="post-content">
+                <span class="post-category ent">Movie Teaser &amp; Score</span>
+                <h3 class="post-title"><a href="../download/music0/index.html">"Echoes of Tomorrow" Sci-Fi Film Teaser &amp; Score</a></h3>
+                <p class="post-excerpt">Cyberpunk sci-fi thriller release news featuring 4K YouTube teaser trailer and full soundtrack streaming widgets.</p>
+                <div class="post-meta">
+                    <span>Cinema Preview</span>
+                    <a href="../download/music0/index.html" class="btn btn-purple" style="padding: 4px 12px; font-size: 0.85rem;">Trailer &amp; Score</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 4: Audio Single Teaser -->
+        <article class="post-card" data-tags="music audio single synthwave track player">
+            <div class="post-image">
+                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1470225620780-dba8ba36b745%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Alex Parker Single" loading="lazy">
+            </div>
+            <div class="post-content">
+                <span class="post-category ent">Track Premiere</span>
+                <h3 class="post-title"><a href="../posts/midnight-dreams-track/index.html">"Midnight Dreams" by Alex Parker</a></h3>
+                <p class="post-excerpt">Interactive audio player, track stems, and behind-the-scenes recording diary of Parker's newest album preview.</p>
+                <div class="post-meta">
+                    <span>June 9, 2026</span>
+                    <a href="../posts/midnight-dreams-track/index.html" style="color: var(--primary-blue); font-weight: 600;">Stream Track →</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 5: Artist Interview -->
+        <article class="post-card" data-tags="interviews music culture production artists">
+            <div class="post-image">
+                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1598488035139-bdbb2231ce04%3Fauto%3Dformat%26fit%3Dcrop%26w%3D600%26q%3D80?_a=BBFAAAAA0" alt="Music production studio" loading="lazy">
+            </div>
+            <div class="post-content">
+                <span class="post-category ent">Artist Interview</span>
+                <h3 class="post-title"><a href="../posts/midnight-whispers/index.html">Inside the Analog Synth Revival with Producers</a></h3>
+                <p class="post-excerpt">Grammy-winning electronic artists discuss modular hardware, tape saturation, and staying analog in an AI world.</p>
+                <div class="post-meta">
+                    <span>June 7, 2026</span>
+                    <a href="../posts/midnight-whispers/index.html" style="color: var(--primary-blue); font-weight: 600;">Read Interview →</a>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+
+<!-- Category Tabs & Dynamic Tag Filter Script -->
+<script>
+    (function() {
+        function initCategoryFilter() {
+            const filterContainer = document.querySelector('.filter-pills');
+            if (!filterContainer) return;
+
+            const pills = filterContainer.querySelectorAll('.filter-pill');
+            if (!pills.length) return;
+
+            // Find all filterable article items
+            const filterableCards = document.querySelectorAll('[data-tags]');
+            if (!filterableCards.length) return;
+
+            // Empty state container element
+            let emptyState = document.getElementById('categoryFilterEmptyState');
+            if (!emptyState) {
+                emptyState = document.createElement('div');
+                emptyState.id = 'categoryFilterEmptyState';
+                emptyState.className = 'category-filter-empty';
+                emptyState.style.display = 'none';
+                emptyState.innerHTML = `
+                    <div style="text-align: center; padding: 3rem 1.5rem; background: var(--card-bg); border-radius: var(--radius-md); border: 1px dashed var(--border-color); margin: 2rem 0;">
+                        <i class="fas fa-filter" style="font-size: 2.2rem; color: var(--primary-blue); opacity: 0.6; margin-bottom: 0.8rem;"></i>
+                        <h4 style="font-size: 1.25rem; color: var(--text-dark); margin-bottom: 0.4rem;">No articles found under this tag</h4>
+                        <p style="color: var(--text-light); font-size: 0.92rem; margin-bottom: 1.2rem;">Try selecting a different topic or return to all stories.</p>
+                        <button type="button" class="btn btn-outline" id="resetCategoryFilterBtn">Show All Stories</button>
+                    </div>
+                `;
+                
+                // Append after grid or container
+                const grid = document.querySelector('.posts-grid') || document.querySelector('.news-container');
+                if (grid && grid.parentNode) {
+                    grid.parentNode.insertBefore(emptyState, grid.nextSibling);
+                }
+            }
+
+            const resetBtn = document.getElementById('resetCategoryFilterBtn');
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => applyFilter('all'));
+            }
+
+            function applyFilter(selectedTag) {
+                const normalizedFilter = (selectedTag || 'all').toLowerCase().trim();
+
+                // Update active class on pills
+                pills.forEach(pill => {
+                    const pillTag = (pill.getAttribute('data-tag') || pill.textContent || '').toLowerCase().trim();
+                    const isAll = (normalizedFilter === 'all' && (pillTag.includes('all') || pillTag === 'all'));
+                    const isMatch = pillTag.includes(normalizedFilter) || normalizedFilter.includes(pillTag) || (pill.getAttribute('data-tag') === normalizedFilter);
+
+                    if (isAll || isMatch) {
+                        pill.classList.add('active');
+                    } else {
+                        pill.classList.remove('active');
+                    }
+                });
+
+                // Filter cards
+                let matchCount = 0;
+                filterableCards.forEach(card => {
+                    const cardTags = (card.getAttribute('data-tags') || '').toLowerCase();
+                    const cardCategory = (card.querySelector('.post-category')?.textContent || '').toLowerCase();
+                    const cardTitle = (card.querySelector('h2, h3, h4')?.textContent || '').toLowerCase();
+
+                    const matches = normalizedFilter === 'all' || 
+                                    cardTags.includes(normalizedFilter) || 
+                                    cardCategory.includes(normalizedFilter) ||
+                                    cardTitle.includes(normalizedFilter);
+
+                    if (matches) {
+                        card.style.display = '';
+                        card.classList.remove('filter-hidden');
+                        card.classList.add('filter-visible');
+                        matchCount++;
+                    } else {
+                        card.style.display = 'none';
+                        card.classList.add('filter-hidden');
+                        card.classList.remove('filter-visible');
+                    }
+                });
+
+                // Handle empty state
+                if (matchCount === 0) {
+                    emptyState.style.display = 'block';
+                } else {
+                    emptyState.style.display = 'none';
+                }
+
+                // Update query parameter without page reload
+                try {
+                    const url = new URL(window.location.href);
+                    if (normalizedFilter === 'all') {
+                        url.searchParams.delete('tag');
+                    } else {
+                        url.searchParams.set('tag', normalizedFilter);
+                    }
+                    window.history.replaceState({}, '', url.toString());
+                } catch (e) {}
+            }
+
+            // Click event listeners for filter pills
+            pills.forEach(pill => {
+                pill.style.cursor = 'pointer';
+                pill.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const tag = this.getAttribute('data-tag') || this.textContent.trim();
+                    applyFilter(tag);
+                });
+            });
+
+            // Auto-selection on page load from URL (?tag=... or #...)
+            const urlParams = new URLSearchParams(window.location.search);
+            const tagFromUrl = urlParams.get('tag') || (window.location.hash ? window.location.hash.replace('#', '') : null);
+            if (tagFromUrl) {
+                applyFilter(tagFromUrl);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCategoryFilter);
+        } else {
+            initCategoryFilter();
+        }
+    })();
+</script>
+
+
+    </main>
+
+    <!-- Pre-Footer Billboard Google Ads Scene (On Every Page) -->
+    
+    <div class="container ad-billboard-container">
+        
+        
+
+<!-- Google Ads Scene: Pre-Footer Large Billboard Banner (970x250 / Responsive) -->
+<div class="google-ad-wrapper billboard-wrapper" data-ad-type="billboard">
+    <div class="google-ad-header">
+        <span class="ad-label">SPONSORED SHOWCASE</span>
+        <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" class="adchoices-link" title="Manage Google Ads">
+            <i class="fab fa-google"></i> <span>Google Ad Services</span>
+        </a>
+    </div>
+
+    <!-- Google AdSense Tag -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9481237418920194" data-ad-slot="9182736450" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+    <!-- Visual Ad Scene Display -->
+    <div class="ad-creative-scene billboard-scene">
+        <div class="billboard-scene-inner">
+            <div class="billboard-text">
+                <span class="billboard-kicker"><i class="fas fa-shield-alt"></i> Official Partner Feature</span>
+                <h3 class="billboard-title">Next-Generation Privacy &amp; Threat Protection with NordVPN</h3>
+                <p class="billboard-desc">Protect your browsing telemetry across public Wi-Fi networks with high-speed 10Gbps servers in 111 countries and built-in malware filtration.</p>
+                <div class="billboard-features">
+                    <span><i class="fas fa-check-circle"></i> Zero-logs audited</span>
+                    <span><i class="fas fa-check-circle"></i> Threat Protection Pro</span>
+                    <span><i class="fas fa-check-circle"></i> 30-day money-back guarantee</span>
+                </div>
+            </div>
+            <div class="billboard-action">
+                <a href="https://nordvpn.com/" target="_blank" rel="noopener noreferrer" class="billboard-cta-btn">
+                    <span>Get 71% Off + 3 Months</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <span class="billboard-disclaimer">Special offer for Viral Son readers</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+    
+
+    <!-- Dynamic Footer -->
+    <!-- Dynamic Footer Component -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <!-- Brand Column -->
+            <div class="footer-col">
+                <a href="../index.html" class="logo" style="margin-bottom: 1.2rem; display: inline-flex;">
+                    <div class="logo-icon" style="background: rgba(255,255,255,0.18);">VS</div>
+                    <div class="logo-text" style="color: #ffffff;">Viral Son</div>
+                </a>
+                <p style="font-size: 0.95rem; opacity: 0.85; margin-bottom: 1.2rem;">
+                    Your trusted destination for trending news, deep-dive technology insights, lifestyle guides, entertainment culture, and vibrant community discussions.
+                </p>
+                <div class="social-links">
+                    <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="../index.html">Home</a></li>
+                    <li class="footer-link"><a href="../news/index.html">News</a></li>
+                    <li class="footer-link"><a href="index.html">Entertainment</a></li>
+                    <li class="footer-link"><a href="../technology/index.html">Technology</a></li>
+                    <li class="footer-link"><a href="../sports/index.html">Sports</a></li>
+                    <li class="footer-link"><a href="../lifestyle/index.html">Lifestyle</a></li>
+                    <li class="footer-link"><a href="../community/index.html">Community Hub</a></li>
+                    <li class="footer-link"><a href="../about/index.html">About Us</a></li>
+                    <li class="footer-link"><a href="../contact/index.html">Contact Us</a></li>
+                    <li class="footer-link"><a href="../terms/index.html">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Dynamic Category Column -->
+            <div class="footer-col">
+                
+                    <h3>Entertainment</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../posts/summer-music-festival/index.html">Music Festivals</a></li>
+                        <li class="footer-link"><a href="index.html">Cinema &amp; TV Series</a></li>
+                        <li class="footer-link"><a href="../download/music/index.html">Music Downloads</a></li>
+                        <li class="footer-link"><a href="../posts/midnight-dreams-track/index.html">Audio Single Teaser</a></li>
+                        <li class="footer-link"><a href="../posts/midnight-whispers/index.html">Feature Reviews</a></li>
+                    </ul>
+                
+            </div>
+
+            <!-- Contact & Newsletter Column -->
+            <div class="footer-col">
+                <h3>Contact &amp; Updates</h3>
+                <p style="font-size: 0.95rem; margin-bottom: 0.4rem;">
+                    <strong>Department:</strong> 
+                    
+                        entertainment@viralson.com
+                    
+                </p>
+                <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 1rem;">
+                    Get curated daily digests and viral stories delivered straight to your inbox.
+                </p>
+                <form class="footer-form" onsubmit="event.preventDefault(); const email = this.querySelector('input').value; alert('Thank you for subscribing with ' + email + '!'); this.reset();">
+                    <div class="form-group" style="margin-bottom: 0.6rem;">
+                        <input type="email" class="form-control" placeholder="Enter your email" required="" style="padding: 10px; font-size: 0.9rem; border-radius: 4px;">
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; padding: 10px; font-size: 0.9rem;">Subscribe Now</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>© <span id="footerCurrentYear">2026</span> Viral Son. All rights reserved. Built with 11ty for GitHub &amp; Netlify.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Auto-Update Yearly Date Script -->
+<script>
+    (function() {
+        const yearEl = document.getElementById('footerCurrentYear');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
+    })();
+</script>
+
+
+    <!-- Sitewide Newsletter Popup Modal -->
+    <!-- Triggered Newsletter Signup Modal with Blur Backdrop & Theme Matching -->
+<div class="newsletter-modal-backdrop" id="newsletterModalBackdrop" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+    <div class="newsletter-modal-card" id="newsletterModalCard">
+        <!-- Prominent Close Button -->
+        <button type="button" class="newsletter-close-btn" id="newsletterCloseBtn" aria-label="Close newsletter popup" title="Close (ESC)">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <!-- Badge -->
+        <div class="newsletter-modal-badge">
+            <i class="fas fa-bolt" style="margin-right: 5px; color: var(--primary-blue);"></i> Daily Viral Dispatch
+        </div>
+
+        <h3 class="newsletter-modal-title">Stay Ahead of the Curve</h3>
+        <p class="newsletter-modal-desc">
+            Get our editors' top investigative scoops, breaking tech &amp; sports reports, and cultural premieres delivered directly to your inbox every morning.
+        </p>
+
+        <!-- Newsletter Submission Form -->
+        <form id="newsletterModalForm" class="newsletter-modal-form">
+            <div class="newsletter-input-group">
+                <input type="email" id="newsletterModalEmail" class="newsletter-modal-input" placeholder="Enter your email address" required="" autocomplete="email">
+                <button type="submit" class="btn newsletter-modal-submit" id="newsletterModalSubmit">
+                    <span>Subscribe Free</span>
+                    <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                </button>
+            </div>
+            <p class="newsletter-privacy-note">
+                <i class="fas fa-shield-alt" style="color: var(--green); margin-right: 4px;"></i> Zero spam. One-click unsubscribe anytime.
+            </p>
+        </form>
+
+        <!-- Success Confirmation State (shown post-submit) -->
+        <div id="newsletterSuccessState" class="newsletter-success-state" style="display: none;">
+            <i class="fas fa-check-circle" style="font-size: 2.5rem; color: var(--green); margin-bottom: 0.8rem;"></i>
+            <h4 style="font-size: 1.3rem; margin-bottom: 0.4rem; color: var(--text-dark);">Welcome to Viral Son!</h4>
+            <p style="font-size: 0.92rem; color: var(--text-light);">You're on the VIP list. We've queued your first morning briefing.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const COOKIE_NAME = 'viralson_newsletter_suppressed';
+        const SUPPRESSION_DAYS = 14;
+
+        // Check if on home/index page
+        const path = window.location.pathname;
+        const isIndexPage = path === '/' || path === '/index.html' || path === '';
+
+        // Only trigger on the index page
+        if (!isIndexPage) return;
+
+        // Cookie & Storage Helpers
+        function getCookie(name) {
+            try {
+                const match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+                return match ? decodeURIComponent(match[3]) : null;
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function setCookie(name, value, days) {
+            try {
+                const d = new Date();
+                d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+                localStorage.setItem(name, 'true');
+            } catch (e) {}
+        }
+
+        function isSuppressed() {
+            try {
+                if (getCookie(COOKIE_NAME) === 'true') return true;
+                if (localStorage.getItem(COOKIE_NAME) === 'true') return true;
+            } catch (e) {}
+            return false;
+        }
+
+        if (isSuppressed()) return;
+
+        const backdrop = document.getElementById('newsletterModalBackdrop');
+        const card = document.getElementById('newsletterModalCard');
+        const closeBtn = document.getElementById('newsletterCloseBtn');
+        const form = document.getElementById('newsletterModalForm');
+        const successState = document.getElementById('newsletterSuccessState');
+        const emailInput = document.getElementById('newsletterModalEmail');
+
+        if (!backdrop || !card) return;
+
+        let modalShown = false;
+        let timer = null;
+
+        function showModal() {
+            if (modalShown || isSuppressed()) return;
+            modalShown = true;
+            if (timer) clearTimeout(timer);
+            window.removeEventListener('scroll', checkScroll);
+
+            backdrop.style.display = 'flex';
+            backdrop.setAttribute('aria-hidden', 'false');
+            setTimeout(() => {
+                backdrop.classList.add('visible');
+                if (emailInput) emailInput.focus();
+            }, 30);
+        }
+
+        function closeModal(suppressDays = SUPPRESSION_DAYS) {
+            setCookie(COOKIE_NAME, 'true', suppressDays);
+            backdrop.classList.remove('visible');
+            backdrop.setAttribute('aria-hidden', 'true');
+            setTimeout(() => {
+                backdrop.style.display = 'none';
+            }, 350);
+        }
+
+        // Trigger 1: 50% Scroll of page content
+        function checkScroll() {
+            if (modalShown) return;
+            const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+            if (scrollTotal <= 0) return;
+            const currentScroll = window.scrollY || window.pageYOffset;
+            if ((currentScroll / scrollTotal) >= 0.50) {
+                showModal();
+            }
+        }
+
+        // Trigger 2: Exactly 30 seconds on index page
+        timer = setTimeout(showModal, 30000);
+
+        window.addEventListener('scroll', checkScroll, { passive: true });
+
+        // Close Handlers
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                closeModal(SUPPRESSION_DAYS);
+            });
+        }
+
+        backdrop.addEventListener('click', function(e) {
+            if (e.target === backdrop) {
+                closeModal(SUPPRESSION_DAYS);
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && backdrop.classList.contains('visible')) {
+                closeModal(SUPPRESSION_DAYS);
+            }
+        });
+
+        // Form Submit Handler
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = emailInput.value.trim();
+                if (!email) return;
+
+                form.style.display = 'none';
+                if (successState) successState.style.display = 'block';
+
+                setCookie(COOKIE_NAME, 'true', 60);
+
+                setTimeout(function() {
+                    closeModal(60);
+                }, 2600);
+            });
+        }
+    })();
+</script>
+
+
+    <!-- Sticky Bottom Viewport Floating Google Ad Anchor -->
+    
+        
+        
+
+<!-- Google Ads Scene: Sticky Bottom Viewport Floating Anchor Ad -->
+<div class="google-ad-anchor-container" id="googleAdAnchor">
+    <div class="google-ad-anchor-bar">
+        <div class="anchor-ad-content">
+            <div class="anchor-ad-badge">
+                <span class="ad-label">AD</span>
+                <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" class="anchor-adchoices" title="Ads by Google">
+                    <svg viewBox="0 0 12 12" width="10" height="10"><path fill="currentColor" d="M1 1h10v10H1V1zm1 1v8h8V2H2zm2 2h4v1H4V4zm0 2h4v1H4V6zm0 2h2v1H4V8z"></path></svg>
+                </a>
+            </div>
+            <div class="anchor-ad-text">
+                <strong>Google Developers:</strong> Accelerate your full-stack roadmap with Firebase Data Connect and Studio tooling.
+            </div>
+            <a href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer" class="anchor-ad-cta">
+                Try Free →
+            </a>
+        </div>
+        <button type="button" class="anchor-close-btn" onclick="dismissAnchorAd()" aria-label="Close Ad">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</div>
+
+
+    
+
+    <!-- Safe Google AdSense & Anchor Control Script -->
+    <script>
+        (function() {
+            // Dismiss anchor ad
+            window.dismissAnchorAd = function() {
+                const anchor = document.getElementById('googleAdAnchor');
+                if (anchor) {
+                    anchor.classList.add('hidden');
+                    sessionStorage.setItem('viralson_anchor_dismissed', 'true');
+                }
+            };
+
+            // Check if dismissed in this session
+            if (sessionStorage.getItem('viralson_anchor_dismissed') === 'true') {
+                const anchor = document.getElementById('googleAdAnchor');
+                if (anchor) anchor.classList.add('hidden');
+            }
+
+            // Safe push for Google AdSense slots without breaking if adblocker is present
+            try {
+                const adSlots = document.querySelectorAll('.adsbygoogle');
+                if (adSlots.length > 0 && window.adsbygoogle) {
+                    adSlots.forEach(() => {
+                        try {
+                            (window.adsbygoogle = window.adsbygoogle || []).push({});
+                        } catch(e) {}
+                    });
+                }
+            } catch(e) {}
+        })();
+    </script>
+
+
+</body>
+<!-- Mirrored from https://viralson.netlify.app/entertainment/ by HTTrack Website Copier/3.x [XR&CO], Mon, 19 Oct 2026 07:09:03 GMT -->
+</html>

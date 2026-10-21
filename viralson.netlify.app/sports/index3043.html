@@ -1,0 +1,1229 @@
+<!DOCTYPE html><html lang="en">
+<!-- Mirrored from https://viralson.netlify.app/sports/?tab=basketball by HTTrack Website Copier/3.x [XR&CO], Mon, 19 Oct 2026 07:09:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=08327584-10e6-45a5-8545-f9db7f804f25
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports News, Match Reports &amp; Tactical Analysis | Viral Son</title>
+    <meta name="description" content="Breaking sports news, match analysis, tactical breakdowns, transfer updates, and athlete stories from around the world.">
+    
+    <!-- OpenGraph Metadata -->
+    <meta property="og:title" content="Sports News, Match Reports &amp; Tactical Analysis | Viral Son">
+    <meta property="og:description" content="Breaking sports news, match analysis, tactical breakdowns, transfer updates, and athlete stories from around the world.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://viralson.com/sports/">
+    
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="../Assets/CD/CSS/index.css">
+
+    <!-- Google AdSense Official Script -->
+    <script async="" src="../../pagead2.googlesyndication.com/pagead/js/fb1a6.txt?client=ca-pub-9481237418920194" crossorigin="anonymous"></script>
+
+    <!-- Theme Initialization to prevent FOUC -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('viralson_theme');
+                if (savedTheme) {
+                    document.documentElement.setAttribute('data-theme', savedTheme);
+                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body class="">
+    <!-- Global Reusable Page Loader -->
+    <!-- Reusable Page Loader Component -->
+<div class="page-loader" id="pageLoader">
+    <div class="vs-logo">VS</div>
+    <div class="loading-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</div>
+
+<script>
+    // Smooth loader disappearance on page ready
+    document.addEventListener('DOMContentLoaded', function() {
+        const loader = document.getElementById('pageLoader');
+        if (loader) {
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    loader.classList.add('hidden');
+                }, 300);
+            });
+            setTimeout(function() {
+                loader.classList.add('hidden');
+            }, 2500);
+        }
+    });
+</script>
+
+
+    <!-- Dynamic Header -->
+    <!-- Header Component with Search, Dark Mode & Navigation -->
+<header>
+    <div class="container header-container">
+        <a href="../index.html" class="logo">
+            <div class="logo-icon">VS</div>
+            <div class="logo-text">Viral Son</div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-wrapper">
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link ">Home</a></li>
+                <li><a href="../news/index.html" class="nav-link ">News</a></li>
+                <li><a href="../entertainment/index.html" class="nav-link ">Entertainment</a></li>
+                <li><a href="../technology/index.html" class="nav-link ">Technology</a></li>
+                <li><a href="index.html" class="nav-link active">Sports</a></li>
+                <li><a href="../lifestyle/index.html" class="nav-link ">Lifestyle</a></li>
+                <li><a href="../community/index.html" class="nav-link ">Community</a></li>
+                <li><a href="../about/index.html" class="nav-link ">About</a></li>
+                <li><a href="../contact/index.html" class="nav-link ">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header Actions: Search, Dark Mode, Mobile Toggle -->
+        <div class="header-actions">
+            <!-- Search Button -->
+            <button class="action-btn search-trigger" id="searchOpenBtn" aria-label="Open search dialog" title="Search site (Press /)">
+                <i class="fas fa-search"></i>
+                <span class="search-hint">Search...</span>
+            </button>
+
+            <!-- Dark Mode Toggle Button -->
+            <button class="action-btn theme-toggle" id="themeToggleBtn" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Site-Wide Search Modal Overlay -->
+<div class="search-modal-backdrop" id="searchModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="search-modal-card">
+        <div class="search-input-wrapper">
+            <i class="fas fa-search search-input-icon"></i>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search news, tech, music, guides, topics..." autocomplete="off">
+            <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Clear search input" style="display: none;">
+                <i class="fas fa-times"></i>
+            </button>
+            <button type="button" id="searchCloseBtn" class="search-close-btn" aria-label="Close search">
+                <span class="esc-badge">ESC</span>
+            </button>
+        </div>
+
+        <div class="search-results-container">
+            <div id="searchResultsSummary" class="search-summary" style="display: none;"></div>
+            <ul id="searchResultsList" class="search-results-list"></ul>
+            <div id="searchEmptyState" class="search-empty-state">
+                <i class="fas fa-search" style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 0.8rem; opacity: 0.6;"></i>
+                <p>Type keywords to search across articles, audio downloads, and topic hubs.</p>
+                <div class="search-quick-tags">
+                    <span>Popular:</span>
+                    <button type="button" class="quick-tag-btn" onclick="quickSearch('Climate')">Climate</button>
+                    <button type="button" class="quick-tag-btn" onclick="quickSearch('AI')">AI</button>
+                    <button type="button" class="quick-tag-btn" onclick="quickSearch('Phone')">Phone</button>
+                    <button type="button" class="quick-tag-btn" onclick="quickSearch('Music')">Music</button>
+                    <button type="button" class="quick-tag-btn" onclick="quickSearch('Productivity')">Productivity</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Header Navigation, Search, and Dark Mode Logic
+    (function() {
+        // --- 1. Dark Mode Functionality ---
+        const themeBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+                themeBtn.setAttribute('title', 'Switch to light mode');
+            } else {
+                themeIcon.className = 'fas fa-moon';
+                themeBtn.setAttribute('title', 'Switch to dark mode');
+            }
+        }
+
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        updateThemeIcon(currentTheme);
+
+        if (themeBtn) {
+            themeBtn.addEventListener('click', function() {
+                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                const newTheme = isDark ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('viralson_theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+        }
+
+        // --- 2. Mobile Menu Toggle ---
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        if (mobileBtn && navMenu) {
+            mobileBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                if (navMenu.classList.contains('active')) {
+                    menuIcon.className = 'fas fa-times';
+                } else {
+                    menuIcon.className = 'fas fa-bars';
+                }
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('header')) {
+                    navMenu.classList.remove('active');
+                    if (menuIcon) menuIcon.className = 'fas fa-bars';
+                }
+            });
+        }
+
+        // --- 3. Site-Wide Search Functionality ---
+        const searchModal = document.getElementById('searchModal');
+        const searchOpenBtn = document.getElementById('searchOpenBtn');
+        const searchCloseBtn = document.getElementById('searchCloseBtn');
+        const searchInput = document.getElementById('searchInput');
+        const searchClearBtn = document.getElementById('searchClearBtn');
+        const resultsList = document.getElementById('searchResultsList');
+        const resultsSummary = document.getElementById('searchResultsSummary');
+        const emptyState = document.getElementById('searchEmptyState');
+
+        let searchData = [];
+        let dataFetched = false;
+
+        async function fetchSearchIndex() {
+            if (dataFetched) return;
+            try {
+                const res = await fetch('../search-index.json');
+                if (res.ok) {
+                    searchData = await res.json();
+                    dataFetched = true;
+                }
+            } catch (err) {
+                console.warn('Could not load search index:', err);
+            }
+        }
+
+        function openSearch() {
+            fetchSearchIndex();
+            searchModal.classList.add('open');
+            searchModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => searchInput.focus(), 50);
+        }
+
+        function closeSearch() {
+            searchModal.classList.remove('open');
+            searchModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        if (searchOpenBtn) searchOpenBtn.addEventListener('click', openSearch);
+        if (searchCloseBtn) searchCloseBtn.addEventListener('click', closeSearch);
+
+        // Click outside modal card to close
+        searchModal.addEventListener('click', function(e) {
+            if (e.target === searchModal) {
+                closeSearch();
+            }
+        });
+
+        // Keyboard shortcuts: '/' or 'Cmd/Ctrl+K' to open, ESC to close
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && searchModal.classList.contains('open')) {
+                closeSearch();
+            } else if ((e.key === '/' || (e.ctrlKey && e.key === 'k') || (e.metaKey && e.key === 'k')) && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+                e.preventDefault();
+                openSearch();
+            }
+        });
+
+        if (searchClearBtn) {
+            searchClearBtn.addEventListener('click', function() {
+                searchInput.value = '';
+                searchClearBtn.style.display = 'none';
+                executeSearch('');
+                searchInput.focus();
+            });
+        }
+
+        window.quickSearch = function(term) {
+            searchInput.value = term;
+            searchClearBtn.style.display = 'block';
+            executeSearch(term);
+        };
+
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.trim();
+                searchClearBtn.style.display = query.length > 0 ? 'block' : 'none';
+                executeSearch(query);
+            });
+        }
+
+        function executeSearch(query) {
+            if (!query || query.length < 2) {
+                resultsList.innerHTML = '';
+                resultsSummary.style.display = 'none';
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            const qLower = query.toLowerCase();
+            const matches = searchData.filter(item => {
+                const inTitle = item.title.toLowerCase().includes(qLower);
+                const inExcerpt = (item.excerpt || '').toLowerCase().includes(qLower);
+                const inCategory = (item.category || '').toLowerCase().includes(qLower);
+                const inTags = (item.tags || []).some(t => t.toLowerCase().includes(qLower));
+                return inTitle || inExcerpt || inCategory || inTags;
+            });
+
+            emptyState.style.display = 'none';
+            resultsSummary.style.display = 'block';
+            resultsSummary.innerHTML = `Found <strong>${matches.length}</strong> result${matches.length === 1 ? '' : 's'} for "<strong>${escapeHtml(query)}</strong>"`;
+
+            if (matches.length === 0) {
+                resultsList.innerHTML = `
+                    <li class="search-no-results">
+                        <i class="far fa-frown" style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text-light);"></i>
+                        <p>No matches found. Try searching for "climate", "foldable", "music", or "AI".</p>
+                    </li>
+                `;
+                return;
+            }
+
+            resultsList.innerHTML = matches.map(item => `
+                <li class="search-result-item">
+                    <a href="${item.url}" class="search-result-link">
+                        <div class="search-result-meta">
+                            <span class="search-category-pill">${item.category}</span>
+                            <span class="search-result-date">${item.date || ''}</span>
+                        </div>
+                        <h4 class="search-result-title">${highlightMatch(item.title, query)}</h4>
+                        <p class="search-result-excerpt">${highlightMatch(item.excerpt || '', query)}</p>
+                    </a>
+                </li>
+            `).join('');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function highlightMatch(text, query) {
+            if (!text || !query) return escapeHtml(text || '');
+            const escaped = escapeHtml(text);
+            const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            return escaped.replace(regex, '<mark class="search-highlight">$1</mark>');
+        }
+    })();
+</script>
+
+
+    <!-- Top Leaderboard Google Ads Scene (On Every Page) -->
+    
+    <div class="container ad-leaderboard-container">
+        
+        
+
+<!-- Google Ads Scene: Top Leaderboard Banner (728x90 / 970x90 / 320x50 Responsive) -->
+<div class="google-ad-wrapper leaderboard-wrapper" data-ad-type="leaderboard">
+    <div class="google-ad-header">
+        <span class="ad-label">ADVERTISEMENT</span>
+        <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" class="adchoices-link" title="Ads by Google / AdChoices">
+            <span>AdChoices</span>
+            <svg class="adchoices-icon" viewBox="0 0 12 12" width="12" height="12">
+                <path fill="currentColor" d="M1 1h10v10H1V1zm1 1v8h8V2H2zm2 2h4v1H4V4zm0 2h4v1H4V6zm0 2h2v1H4V8z"></path>
+            </svg>
+        </a>
+    </div>
+    
+    <!-- Google AdSense Tag -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9481237418920194" data-ad-slot="8947291032" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+
+    <!-- Visual Ad Scene Display -->
+    <div class="ad-creative-scene leaderboard-scene">
+        <div class="ad-scene-brand">
+            <span class="ad-badge-google"><i class="fab fa-google"></i> Google Cloud</span>
+            <h4 class="ad-scene-title">Build Intelligence Faster with Vertex AI on Google Cloud</h4>
+            <p class="ad-scene-desc">Access state-of-the-art multimodal Gemini models, enterprise embeddings, and serverless vector search. Start with $300 free credits.</p>
+        </div>
+        <div class="ad-scene-cta">
+            <a href="https://cloud.google.com/vertex-ai" target="_blank" rel="noopener noreferrer" class="ad-cta-btn">
+                <span>Start Free</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+    
+
+    <!-- Main Content Area -->
+    <main>
+        
+<!-- Sports Editorial Headline Banner -->
+<section class="breaking-news" style="background-color: var(--dark-blue);">
+    <div class="container breaking-container">
+        <div class="breaking-label" style="background: var(--primary-blue); color: var(--white); font-weight: 700;">HEADLINE</div>
+        <div class="breaking-text">
+            <div class="breaking-text-content">Champions League: Northfield United completes sensational comeback against Riverside City to book European Final place!</div>
+        </div>
+    </div>
+</section>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <span class="post-category" style="background: rgba(46, 204, 113, 0.15); color: #27ae60; margin-bottom: 0.8rem;">World Athletics &amp; Stadiums</span>
+        <h1>Sports &amp; Arena Coverage</h1>
+        <p>In-depth sports reporting, post-match breakdowns, tactical analysis, transfer markets, and exclusive athlete profiles across global leagues.</p>
+    </div>
+</section>
+
+<!-- Sports Main Content -->
+<section class="sports-content" style="padding-bottom: 3rem;">
+    <div class="container">
+        <!-- Sports Navigation Tabs -->
+        <div class="sports-tabs" id="sportsTabs">
+            <div class="tab active" data-tab="football"><i class="fas fa-futbol" style="margin-right: 6px;"></i> Football</div>
+            <div class="tab" data-tab="basketball"><i class="fas fa-basketball-ball" style="margin-right: 6px;"></i> Basketball</div>
+            <div class="tab" data-tab="tennis"><i class="fas fa-table-tennis" style="margin-right: 6px;"></i> Tennis</div>
+            <div class="tab" data-tab="motorsport"><i class="fas fa-flag-checkered" style="margin-right: 6px;"></i> Motorsport</div>
+            <div class="tab" data-tab="athletics"><i class="fas fa-running" style="margin-right: 6px;"></i> Athletics</div>
+        </div>
+
+        <!-- Main Content & Sidebar Grid -->
+        <div class="news-container">
+            <div class="news-main">
+                
+                <!-- ================= FOOTBALL TAB CONTENT ================= -->
+                <div class="tab-content active" id="tab-football">
+                    <!-- Featured Football Card -->
+                    <article class="news-card featured" style="margin-bottom: 2.5rem;">
+                        <div class="news-image">
+                            <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1522778119026-d647f0596c20%3Fauto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D80?_a=BBFAAAAA0" alt="Football Stadium Match Celebration" loading="lazy">
+                        </div>
+                        <div class="news-content">
+                            <span class="post-category" style="background: rgba(46, 204, 113, 0.15); color: #27ae60;">Champions League • Match Report</span>
+                            <h2 class="news-title"><a href="../posts/united-late-winner/index.html">Late Winner Sends United Through to the Final in Dramatic Fashion</a></h2>
+                            <p class="news-date">June 24, 2026 • By Daniel Okafor • 6 min read</p>
+                            <p style="color: var(--text-light); margin-bottom: 1.2rem;">A stoppage-time strike sealed a remarkable comeback from two goals down, capping one of the most thrilling semi-finals in recent memory.</p>
+                            <a href="../posts/united-late-winner/index.html" class="btn btn-green">Read Full Match Report</a>
+                        </div>
+                    </article>
+
+                    <!-- Football Grid -->
+                    <div class="sports-grid">
+                        <div class="news-card">
+                            <div class="news-image" style="height: 170px;">
+                                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a%3Fauto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D80?_a=BBFAAAAA0" alt="Transfer News" loading="lazy">
+                            </div>
+                            <div class="news-content" style="padding: 1.2rem;">
+                                <span class="post-category" style="background: rgba(52, 152, 219, 0.15); color: var(--primary-blue);">Transfers</span>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;"><a href="../posts/united-late-winner/index.html">Record-Breaking Deal Agreed for Star Midfielder</a></h3>
+                                <p class="news-date">June 22, 2026 • 4 min read</p>
+                            </div>
+                        </div>
+
+                        <div class="news-card">
+                            <div class="news-image" style="height: 170px;">
+                                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1508098682722-e99c43a406b2%3Fauto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D80?_a=BBFAAAAA0" alt="League Table" loading="lazy">
+                            </div>
+                            <div class="news-content" style="padding: 1.2rem;">
+                                <span class="post-category" style="background: rgba(230, 126, 34, 0.15); color: #e67e22;">Domestic League</span>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;"><a href="../posts/united-late-winner/index.html">Title Race Tightens as Top Three Drop Points</a></h3>
+                                <p class="news-date">June 21, 2026 • 5 min read</p>
+                            </div>
+                        </div>
+
+                        <div class="news-card">
+                            <div class="news-image" style="height: 170px;">
+                                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9%3Fauto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D80?_a=BBFAAAAA0" alt="Manager Press Conference" loading="lazy">
+                            </div>
+                            <div class="news-content" style="padding: 1.2rem;">
+                                <span class="post-category" style="background: rgba(155, 89, 182, 0.15); color: #9b59b6;">Tactics</span>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;"><a href="../posts/united-late-winner/index.html">Tactical Shift That Changed the Entire Season</a></h3>
+                                <p class="news-date">June 19, 2026 • 7 min read</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Athlete Spotlight -->
+                    <div class="athlete-spotlight">
+                        <div class="athlete-container">
+                            <div class="athlete-image">
+                                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b%3Fauto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D80?_a=BBFAAAAA0" alt="Daniel Okafor Player of the Month" loading="lazy">
+                            </div>
+                            <div class="athlete-info">
+                                <h3>Daniel Okafor</h3>
+                                <span class="athlete-tag">Player of the Month</span>
+                                <p class="athlete-bio">With 11 goals in his last eight appearances, Daniel Okafor has become the most feared forward in European football. His blend of clinical positioning, explosive burst, and composure under pressure has electrified the title race.</p>
+                                <div class="athlete-stats">
+                                    <div class="stat">
+                                        <div class="stat-value">24</div>
+                                        <div class="stat-label">Goals</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-value">9</div>
+                                        <div class="stat-label">Assists</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-value">8.7</div>
+                                        <div class="stat-label">Avg Rating</div>
+                                    </div>
+                                </div>
+                                <a href="../posts/united-late-winner/index.html" class="btn btn-green">Read Player Profile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Fixtures -->
+                    <div class="fixtures-section">
+                        <h3 class="section-title">Upcoming Fixtures</h3>
+                        <ul class="fixtures-list">
+                            <li class="fixture-item">
+                                <div class="fixture-date">Sat, July 1</div>
+                                <div class="fixture-match">Northfield United vs Riverside City</div>
+                                <div class="fixture-venue">Northfield Arena, 17:30</div>
+                            </li>
+                            <li class="fixture-item">
+                                <div class="fixture-date">Sun, July 2</div>
+                                <div class="fixture-match">Real Marbella vs Costa del Sol</div>
+                                <div class="fixture-venue">Estadio del Mar, 20:00</div>
+                            </li>
+                            <li class="fixture-item">
+                                <div class="fixture-date">Tue, July 4</div>
+                                <div class="fixture-match">Milano FC vs Torino Athletic</div>
+                                <div class="fixture-venue">San Vittorio, 19:45</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ================= BASKETBALL TAB CONTENT ================= -->
+                <div class="tab-content" id="tab-basketball" style="display: none;">
+                    <article class="news-card featured" style="margin-bottom: 2.5rem;">
+                        <div class="news-image">
+                            <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1546519638-68e109498ffc%3Fauto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D80?_a=BBFAAAAA0" alt="Basketball Finals Game" loading="lazy">
+                        </div>
+                        <div class="news-content">
+                            <span class="post-category" style="background: rgba(230, 126, 34, 0.15); color: #e67e22;">Playoffs • Finals</span>
+                            <h2 class="news-title"><a href="../posts/united-late-winner/index.html">Overtime Thriller Levels the Finals Series at 2-2</a></h2>
+                            <p class="news-date">June 23, 2026 • 5 min read</p>
+                            <p style="color: var(--text-light); margin-bottom: 1.2rem;">A clutch step-back three-pointer with 1.4 seconds remaining forced double overtime, where the home squad held on for an electric triumph.</p>
+                            <a href="../posts/united-late-winner/index.html" class="btn btn-orange">Game Breakdown</a>
+                        </div>
+                    </article>
+
+                    <div class="sports-grid">
+                        <div class="news-card">
+                            <div class="news-image" style="height: 170px;">
+                                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1519861531473-9200262188bf%3Fauto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D80?_a=BBFAAAAA0" alt="Basketball Training" loading="lazy">
+                            </div>
+                            <div class="news-content" style="padding: 1.2rem;">
+                                <span class="post-category" style="background: rgba(52, 152, 219, 0.15); color: var(--primary-blue);">Draft Combine</span>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Top Prospects Shine at Pre-Draft Combine</h3>
+                                <p class="news-date">June 21, 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="news-card">
+                            <div class="news-image" style="height: 170px;">
+                                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1504450758481-7338eba7524a%3Fauto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D80?_a=BBFAAAAA0" alt="Basketball Arena" loading="lazy">
+                            </div>
+                            <div class="news-content" style="padding: 1.2rem;">
+                                <span class="post-category" style="background: rgba(46, 204, 113, 0.15); color: #27ae60;">Analysis</span>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">How Modern Zone Schemes Counter Perimeter Spacing</h3>
+                                <p class="news-date">June 18, 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="news-card">
+                            <div class="news-image" style="height: 170px;">
+                                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1608245449230-4ac19066d2d0%3Fauto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D80?_a=BBFAAAAA0" alt="Basketball Court" loading="lazy">
+                            </div>
+                            <div class="news-content" style="padding: 1.2rem;">
+                                <span class="post-category" style="background: rgba(231, 76, 60, 0.15); color: var(--red);">Injury Update</span>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">All-Star Point Guard Cleared for Crucial Game 5</h3>
+                                <p class="news-date">June 16, 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= TENNIS TAB CONTENT ================= -->
+                <div class="tab-content" id="tab-tennis" style="display: none;">
+                    <article class="news-card featured" style="margin-bottom: 2.5rem;">
+                        <div class="news-image">
+                            <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1622279457486-62dcc4a431d6%3Fauto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D80?_a=BBFAAAAA0" alt="Tennis Court Grand Slam" loading="lazy">
+                        </div>
+                        <div class="news-content">
+                            <span class="post-category" style="background: rgba(46, 204, 113, 0.15); color: #27ae60;">Grand Slam Championship</span>
+                            <h2 class="news-title">Five-Set Baseline Epic Sends 21-Year-Old Qualifier to First Major Semi-Final</h2>
+                            <p class="news-date">June 22, 2026 • 5 min read</p>
+                            <p style="color: var(--text-light); margin-bottom: 1.2rem;">After four hours and thirty-eight minutes of unrelenting rallies under the sun, the young qualifier completed the biggest upset of the tennis calendar.</p>
+                            <a href="index.html" class="btn btn-green">View Tournament Draw</a>
+                        </div>
+                    </article>
+
+                    <div class="sports-grid">
+                        <div class="news-card">
+                            <div class="news-image" style="height: 170px;">
+                                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1554068865-24cecd4e34b8%3Fauto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D80?_a=BBFAAAAA0" alt="Tennis Serve" loading="lazy">
+                            </div>
+                            <div class="news-content" style="padding: 1.2rem;">
+                                <span class="post-category" style="background: rgba(52, 152, 219, 0.15); color: var(--primary-blue);">Rankings</span>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">World Number One Ranking Battles Head to Centre Court</h3>
+                                <p class="news-date">June 20, 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="news-card">
+                            <div class="news-image" style="height: 170px;">
+                                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1530915365347-e35b749a0381%3Fauto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D80?_a=BBFAAAAA0" alt="Tennis Stadium" loading="lazy">
+                            </div>
+                            <div class="news-content" style="padding: 1.2rem;">
+                                <span class="post-category" style="background: rgba(155, 89, 182, 0.15); color: #9b59b6;">Technique</span>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">The Tactical Return of the Serve-and-Volley Masterclass</h3>
+                                <p class="news-date">June 17, 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= MOTORSPORT TAB CONTENT ================= -->
+                <div class="tab-content" id="tab-motorsport" style="display: none;">
+                    <article class="news-card featured" style="margin-bottom: 2.5rem;">
+                        <div class="news-image">
+                            <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1503376780353-7e6692767b70%3Fauto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D80?_a=BBFAAAAA0" alt="Racing Car on Track" loading="lazy">
+                        </div>
+                        <div class="news-content">
+                            <span class="post-category" style="background: rgba(231, 76, 60, 0.15); color: var(--red);">Grand Prix • Race Report</span>
+                            <h2 class="news-title">Pit Strategy Masterclass Delivers Shock Wet-Weather Victory</h2>
+                            <p class="news-date">June 21, 2026 • 5 min read</p>
+                            <p style="color: var(--text-light); margin-bottom: 1.2rem;">A daring early undercut to intermediate compound tyres in torrential rain propelled the underdogs onto the top step of the podium.</p>
+                            <a href="index.html" class="btn" style="background: var(--red);">Read GP Debrief</a>
+                        </div>
+                    </article>
+
+                    <div class="sports-grid">
+                        <div class="news-card">
+                            <div class="news-image" style="height: 170px;">
+                                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1541348263662-e068662d82af%3Fauto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D80?_a=BBFAAAAA0" alt="Race Track" loading="lazy">
+                            </div>
+                            <div class="news-content" style="padding: 1.2rem;">
+                                <span class="post-category" style="background: rgba(230, 126, 34, 0.15); color: #e67e22;">Qualifying</span>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Pole Position Secured by Barely 0.032 Seconds</h3>
+                                <p class="news-date">June 20, 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="news-card">
+                            <div class="news-image" style="height: 170px;">
+                                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1552519507-da3b142c6e3d%3Fauto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D80?_a=BBFAAAAA0" alt="Motorsport paddock" loading="lazy">
+                            </div>
+                            <div class="news-content" style="padding: 1.2rem;">
+                                <span class="post-category" style="background: rgba(52, 152, 219, 0.15); color: var(--primary-blue);">Driver Market</span>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Championship Contender Signs Multi-Year Contract Extension</h3>
+                                <p class="news-date">June 18, 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= ATHLETICS TAB CONTENT ================= -->
+                <div class="tab-content" id="tab-athletics" style="display: none;">
+                    <article class="news-card featured" style="margin-bottom: 2.5rem;">
+                        <div class="news-image">
+                            <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1552674605-db6ffd4facb5%3Fauto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D80?_a=BBFAAAAA0" alt="Running Track Record" loading="lazy">
+                        </div>
+                        <div class="news-content">
+                            <span class="post-category" style="background: rgba(52, 152, 219, 0.15); color: var(--primary-blue);">Track &amp; Field • World Record</span>
+                            <h2 class="news-title">World Record Shattered in Stunning 400m Diamond League Sprint</h2>
+                            <p class="news-date">June 20, 2026 • 4 min read</p>
+                            <p style="color: var(--text-light); margin-bottom: 1.2rem;">A masterfully paced acceleration around the top curve and an explosive final straight rewrote the global record books before a roaring stadium.</p>
+                            <a href="index.html" class="btn">View Lap Telemetry</a>
+                        </div>
+                    </article>
+
+                    <div class="sports-grid">
+                        <div class="news-card">
+                            <div class="news-image" style="height: 170px;">
+                                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1461896836934-ffe607ba8211%3Fauto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D80?_a=BBFAAAAA0" alt="Marathon" loading="lazy">
+                            </div>
+                            <div class="news-content" style="padding: 1.2rem;">
+                                <span class="post-category" style="background: rgba(46, 204, 113, 0.15); color: #27ae60;">Marathon</span>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Course Record Broken at City Marathon by Two Minutes</h3>
+                                <p class="news-date">June 18, 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="news-card">
+                            <div class="news-image" style="height: 170px;">
+                                <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1571008887538-b36bb32f4571%3Fauto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D80?_a=BBFAAAAA0" alt="Athlete Training" loading="lazy">
+                            </div>
+                            <div class="news-content" style="padding: 1.2rem;">
+                                <span class="post-category" style="background: rgba(230, 126, 34, 0.15); color: #e67e22;">High Performance</span>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Inside the Biomechanical Lab of Olympic Sprinters</h3>
+                                <p class="news-date">June 15, 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sports Sidebar -->
+            <aside class="news-sidebar">
+                <!-- Sidebar Google Ads Display Unit -->
+                
+                
+
+<!-- Google Ads Scene: Sidebar Display Unit (300x250 / 300x600 Half-Page) -->
+<div class="google-ad-wrapper sidebar-ad-wrapper" data-ad-type="sidebar">
+    <div class="google-ad-header">
+        <span class="ad-label">SPONSORED</span>
+        <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" class="adchoices-link" title="Ads by Google">
+            <i class="fab fa-google" style="font-size: 0.7rem; margin-right: 2px;"></i> Ad
+        </a>
+    </div>
+
+    <!-- Google AdSense Tag -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9481237418920194" data-ad-slot="4920192831" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
+
+    <!-- Visual Ad Scene Display -->
+    <div class="ad-creative-scene sidebar-scene">
+        <div class="ad-scene-media">
+            <img src="https://res.cloudinary.com/Michael/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1511707171634-5f897ff02aa9%3Fauto%3Dformat%26fit%3Dcrop%26w%3D400%26q%3D80?_a=BBFAAAAA0" alt="Google Hardware Showcase" loading="lazy">
+            <span class="ad-sponsored-pill">Featured Hardware</span>
+        </div>
+        <div class="ad-scene-content">
+            <h4 class="ad-scene-title">Google Pixel 9 Pro Fold</h4>
+            <p class="ad-scene-desc">The thinnest foldable with Super Actua Flex displays and generative Gemini intelligence built right in.</p>
+            <div class="ad-scene-footer">
+                <span class="ad-price-tag">From $1,799</span>
+                <a href="https://store.google.com/" target="_blank" rel="noopener noreferrer" class="ad-cta-btn small">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">Trending in Sports</h3>
+                    <ul class="trending-list">
+                        <li class="trending-item">
+                            <a href="../posts/united-late-winner/index.html" class="trending-title">Late Winner Sends United Through to Champions League Final</a>
+                            <div class="trending-meta"><span>Football</span> • <span>42.1K reads</span></div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="index3043.html?tab=basketball" class="trending-title">Playoff Finals Deadlocked 2-2 After Overtime Drama</a>
+                            <div class="trending-meta"><span>Basketball</span> • <span>19.3K reads</span></div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="index0ff1.html?tab=tennis" class="trending-title">21-Year-Old Qualifier Advances to Major Semi-Final</a>
+                            <div class="trending-meta"><span>Tennis</span> • <span>15.7K reads</span></div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="index7ffe.html?tab=motorsport" class="trending-title">Underdog Strategy Clinches Wet Weather Grand Prix</a>
+                            <div class="trending-meta"><span>Motorsport</span> • <span>12.4K reads</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">Upcoming Tournaments</h3>
+                    <ul class="trending-list">
+                        <li class="trending-item">
+                            <div style="font-weight: 700; color: var(--primary-blue); font-size: 0.85rem;">July 1, 2026</div>
+                            <div style="font-weight: 600;">Champions League Final — National Stadium</div>
+                        </li>
+                        <li class="trending-item">
+                            <div style="font-weight: 700; color: var(--orange); font-size: 0.85rem;">July 2, 2026</div>
+                            <div style="font-weight: 600;">Coastal Grand Prix — Marina Circuit</div>
+                        </li>
+                        <li class="trending-item">
+                            <div style="font-weight: 700; color: var(--green); font-size: 0.85rem;">July 8, 2026</div>
+                            <div style="font-weight: 600;">National Athletics Championships — Olympic Stadium</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">Sports Digest</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">
+                        Get daily match previews, tactical analysis, transfer updates, and fixture schedules delivered each morning.
+                    </p>
+                    <form onsubmit="event.preventDefault(); alert('Subscribed to sports digest!'); this.reset();">
+                        <input type="email" class="form-control" placeholder="Your email address" required="" style="margin-bottom: 0.8rem;">
+                        <button type="submit" class="btn btn-green" style="width: 100%;">Subscribe to Sports</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- Sports Tab Switching Script -->
+<script>
+    (function() {
+        const tabs = document.querySelectorAll('.sports-tabs .tab');
+        const contents = document.querySelectorAll('.news-main .tab-content');
+
+        function switchTab(tabId) {
+            tabs.forEach(tab => {
+                if (tab.getAttribute('data-tab') === tabId) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+
+            contents.forEach(content => {
+                if (content.id === `tab-${tabId}`) {
+                    content.style.display = 'block';
+                    content.classList.add('active');
+                } else {
+                    content.style.display = 'none';
+                    content.classList.remove('active');
+                }
+            });
+
+            try {
+                const url = new URL(window.location.href);
+                url.searchParams.set('tab', tabId);
+                window.history.replaceState({}, '', url.toString());
+            } catch (e) {}
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                switchTab(tabId);
+            });
+        });
+
+        // Check for URL query param e.g. ?tab=motorsport
+        const urlParams = new URLSearchParams(window.location.search);
+        const initialTab = urlParams.get('tab');
+        if (initialTab && document.getElementById(`tab-${initialTab}`)) {
+            switchTab(initialTab);
+        }
+    })();
+</script>
+
+    </main>
+
+    <!-- Pre-Footer Billboard Google Ads Scene (On Every Page) -->
+    
+    <div class="container ad-billboard-container">
+        
+        
+
+<!-- Google Ads Scene: Pre-Footer Large Billboard Banner (970x250 / Responsive) -->
+<div class="google-ad-wrapper billboard-wrapper" data-ad-type="billboard">
+    <div class="google-ad-header">
+        <span class="ad-label">SPONSORED SHOWCASE</span>
+        <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" class="adchoices-link" title="Manage Google Ads">
+            <i class="fab fa-google"></i> <span>Google Ad Services</span>
+        </a>
+    </div>
+
+    <!-- Google AdSense Tag -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9481237418920194" data-ad-slot="9182736450" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+    <!-- Visual Ad Scene Display -->
+    <div class="ad-creative-scene billboard-scene">
+        <div class="billboard-scene-inner">
+            <div class="billboard-text">
+                <span class="billboard-kicker"><i class="fas fa-shield-alt"></i> Official Partner Feature</span>
+                <h3 class="billboard-title">Next-Generation Privacy &amp; Threat Protection with NordVPN</h3>
+                <p class="billboard-desc">Protect your browsing telemetry across public Wi-Fi networks with high-speed 10Gbps servers in 111 countries and built-in malware filtration.</p>
+                <div class="billboard-features">
+                    <span><i class="fas fa-check-circle"></i> Zero-logs audited</span>
+                    <span><i class="fas fa-check-circle"></i> Threat Protection Pro</span>
+                    <span><i class="fas fa-check-circle"></i> 30-day money-back guarantee</span>
+                </div>
+            </div>
+            <div class="billboard-action">
+                <a href="https://nordvpn.com/" target="_blank" rel="noopener noreferrer" class="billboard-cta-btn">
+                    <span>Get 71% Off + 3 Months</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <span class="billboard-disclaimer">Special offer for Viral Son readers</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+    
+
+    <!-- Dynamic Footer -->
+    <!-- Dynamic Footer Component -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <!-- Brand Column -->
+            <div class="footer-col">
+                <a href="../index.html" class="logo" style="margin-bottom: 1.2rem; display: inline-flex;">
+                    <div class="logo-icon" style="background: rgba(255,255,255,0.18);">VS</div>
+                    <div class="logo-text" style="color: #ffffff;">Viral Son</div>
+                </a>
+                <p style="font-size: 0.95rem; opacity: 0.85; margin-bottom: 1.2rem;">
+                    Your trusted destination for trending news, deep-dive technology insights, lifestyle guides, entertainment culture, and vibrant community discussions.
+                </p>
+                <div class="social-links">
+                    <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="../index.html">Home</a></li>
+                    <li class="footer-link"><a href="../news/index.html">News</a></li>
+                    <li class="footer-link"><a href="../entertainment/index.html">Entertainment</a></li>
+                    <li class="footer-link"><a href="../technology/index.html">Technology</a></li>
+                    <li class="footer-link"><a href="index.html">Sports</a></li>
+                    <li class="footer-link"><a href="../lifestyle/index.html">Lifestyle</a></li>
+                    <li class="footer-link"><a href="../community/index.html">Community Hub</a></li>
+                    <li class="footer-link"><a href="../about/index.html">About Us</a></li>
+                    <li class="footer-link"><a href="../contact/index.html">Contact Us</a></li>
+                    <li class="footer-link"><a href="../terms/index.html">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Dynamic Category Column -->
+            <div class="footer-col">
+                
+                    <h3>Sports Categories</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../posts/united-late-winner/index.html">Champions League</a></li>
+                        <li class="footer-link"><a href="indexc58b.html?tab=football">Football Coverage</a></li>
+                        <li class="footer-link"><a href="index3043.html?tab=basketball">Basketball Playoffs</a></li>
+                        <li class="footer-link"><a href="index0ff1.html?tab=tennis">Grand Slam Tennis</a></li>
+                        <li class="footer-link"><a href="index7ffe.html?tab=motorsport">Motorsport &amp; GP</a></li>
+                    </ul>
+                
+            </div>
+
+            <!-- Contact & Newsletter Column -->
+            <div class="footer-col">
+                <h3>Contact &amp; Updates</h3>
+                <p style="font-size: 0.95rem; margin-bottom: 0.4rem;">
+                    <strong>Department:</strong> 
+                    
+                        info@viralson.com
+                    
+                </p>
+                <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 1rem;">
+                    Get curated daily digests and viral stories delivered straight to your inbox.
+                </p>
+                <form class="footer-form" onsubmit="event.preventDefault(); const email = this.querySelector('input').value; alert('Thank you for subscribing with ' + email + '!'); this.reset();">
+                    <div class="form-group" style="margin-bottom: 0.6rem;">
+                        <input type="email" class="form-control" placeholder="Enter your email" required="" style="padding: 10px; font-size: 0.9rem; border-radius: 4px;">
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; padding: 10px; font-size: 0.9rem;">Subscribe Now</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>© <span id="footerCurrentYear">2026</span> Viral Son. All rights reserved. Built with 11ty for GitHub &amp; Netlify.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Auto-Update Yearly Date Script -->
+<script>
+    (function() {
+        const yearEl = document.getElementById('footerCurrentYear');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
+    })();
+</script>
+
+
+    <!-- Sitewide Newsletter Popup Modal -->
+    <!-- Triggered Newsletter Signup Modal with Blur Backdrop & Theme Matching -->
+<div class="newsletter-modal-backdrop" id="newsletterModalBackdrop" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+    <div class="newsletter-modal-card" id="newsletterModalCard">
+        <!-- Prominent Close Button -->
+        <button type="button" class="newsletter-close-btn" id="newsletterCloseBtn" aria-label="Close newsletter popup" title="Close (ESC)">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <!-- Badge -->
+        <div class="newsletter-modal-badge">
+            <i class="fas fa-bolt" style="margin-right: 5px; color: var(--primary-blue);"></i> Daily Viral Dispatch
+        </div>
+
+        <h3 class="newsletter-modal-title">Stay Ahead of the Curve</h3>
+        <p class="newsletter-modal-desc">
+            Get our editors' top investigative scoops, breaking tech &amp; sports reports, and cultural premieres delivered directly to your inbox every morning.
+        </p>
+
+        <!-- Newsletter Submission Form -->
+        <form id="newsletterModalForm" class="newsletter-modal-form">
+            <div class="newsletter-input-group">
+                <input type="email" id="newsletterModalEmail" class="newsletter-modal-input" placeholder="Enter your email address" required="" autocomplete="email">
+                <button type="submit" class="btn newsletter-modal-submit" id="newsletterModalSubmit">
+                    <span>Subscribe Free</span>
+                    <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                </button>
+            </div>
+            <p class="newsletter-privacy-note">
+                <i class="fas fa-shield-alt" style="color: var(--green); margin-right: 4px;"></i> Zero spam. One-click unsubscribe anytime.
+            </p>
+        </form>
+
+        <!-- Success Confirmation State (shown post-submit) -->
+        <div id="newsletterSuccessState" class="newsletter-success-state" style="display: none;">
+            <i class="fas fa-check-circle" style="font-size: 2.5rem; color: var(--green); margin-bottom: 0.8rem;"></i>
+            <h4 style="font-size: 1.3rem; margin-bottom: 0.4rem; color: var(--text-dark);">Welcome to Viral Son!</h4>
+            <p style="font-size: 0.92rem; color: var(--text-light);">You're on the VIP list. We've queued your first morning briefing.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const COOKIE_NAME = 'viralson_newsletter_suppressed';
+        const SUPPRESSION_DAYS = 14;
+
+        // Check if on home/index page
+        const path = window.location.pathname;
+        const isIndexPage = path === '/' || path === '/index.html' || path === '';
+
+        // Only trigger on the index page
+        if (!isIndexPage) return;
+
+        // Cookie & Storage Helpers
+        function getCookie(name) {
+            try {
+                const match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+                return match ? decodeURIComponent(match[3]) : null;
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function setCookie(name, value, days) {
+            try {
+                const d = new Date();
+                d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+                localStorage.setItem(name, 'true');
+            } catch (e) {}
+        }
+
+        function isSuppressed() {
+            try {
+                if (getCookie(COOKIE_NAME) === 'true') return true;
+                if (localStorage.getItem(COOKIE_NAME) === 'true') return true;
+            } catch (e) {}
+            return false;
+        }
+
+        if (isSuppressed()) return;
+
+        const backdrop = document.getElementById('newsletterModalBackdrop');
+        const card = document.getElementById('newsletterModalCard');
+        const closeBtn = document.getElementById('newsletterCloseBtn');
+        const form = document.getElementById('newsletterModalForm');
+        const successState = document.getElementById('newsletterSuccessState');
+        const emailInput = document.getElementById('newsletterModalEmail');
+
+        if (!backdrop || !card) return;
+
+        let modalShown = false;
+        let timer = null;
+
+        function showModal() {
+            if (modalShown || isSuppressed()) return;
+            modalShown = true;
+            if (timer) clearTimeout(timer);
+            window.removeEventListener('scroll', checkScroll);
+
+            backdrop.style.display = 'flex';
+            backdrop.setAttribute('aria-hidden', 'false');
+            setTimeout(() => {
+                backdrop.classList.add('visible');
+                if (emailInput) emailInput.focus();
+            }, 30);
+        }
+
+        function closeModal(suppressDays = SUPPRESSION_DAYS) {
+            setCookie(COOKIE_NAME, 'true', suppressDays);
+            backdrop.classList.remove('visible');
+            backdrop.setAttribute('aria-hidden', 'true');
+            setTimeout(() => {
+                backdrop.style.display = 'none';
+            }, 350);
+        }
+
+        // Trigger 1: 50% Scroll of page content
+        function checkScroll() {
+            if (modalShown) return;
+            const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+            if (scrollTotal <= 0) return;
+            const currentScroll = window.scrollY || window.pageYOffset;
+            if ((currentScroll / scrollTotal) >= 0.50) {
+                showModal();
+            }
+        }
+
+        // Trigger 2: Exactly 30 seconds on index page
+        timer = setTimeout(showModal, 30000);
+
+        window.addEventListener('scroll', checkScroll, { passive: true });
+
+        // Close Handlers
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                closeModal(SUPPRESSION_DAYS);
+            });
+        }
+
+        backdrop.addEventListener('click', function(e) {
+            if (e.target === backdrop) {
+                closeModal(SUPPRESSION_DAYS);
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && backdrop.classList.contains('visible')) {
+                closeModal(SUPPRESSION_DAYS);
+            }
+        });
+
+        // Form Submit Handler
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = emailInput.value.trim();
+                if (!email) return;
+
+                form.style.display = 'none';
+                if (successState) successState.style.display = 'block';
+
+                setCookie(COOKIE_NAME, 'true', 60);
+
+                setTimeout(function() {
+                    closeModal(60);
+                }, 2600);
+            });
+        }
+    })();
+</script>
+
+
+    <!-- Sticky Bottom Viewport Floating Google Ad Anchor -->
+    
+        
+        
+
+<!-- Google Ads Scene: Sticky Bottom Viewport Floating Anchor Ad -->
+<div class="google-ad-anchor-container" id="googleAdAnchor">
+    <div class="google-ad-anchor-bar">
+        <div class="anchor-ad-content">
+            <div class="anchor-ad-badge">
+                <span class="ad-label">AD</span>
+                <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" class="anchor-adchoices" title="Ads by Google">
+                    <svg viewBox="0 0 12 12" width="10" height="10"><path fill="currentColor" d="M1 1h10v10H1V1zm1 1v8h8V2H2zm2 2h4v1H4V4zm0 2h4v1H4V6zm0 2h2v1H4V8z"></path></svg>
+                </a>
+            </div>
+            <div class="anchor-ad-text">
+                <strong>Google Developers:</strong> Accelerate your full-stack roadmap with Firebase Data Connect and Studio tooling.
+            </div>
+            <a href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer" class="anchor-ad-cta">
+                Try Free →
+            </a>
+        </div>
+        <button type="button" class="anchor-close-btn" onclick="dismissAnchorAd()" aria-label="Close Ad">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</div>
+
+
+    
+
+    <!-- Safe Google AdSense & Anchor Control Script -->
+    <script>
+        (function() {
+            // Dismiss anchor ad
+            window.dismissAnchorAd = function() {
+                const anchor = document.getElementById('googleAdAnchor');
+                if (anchor) {
+                    anchor.classList.add('hidden');
+                    sessionStorage.setItem('viralson_anchor_dismissed', 'true');
+                }
+            };
+
+            // Check if dismissed in this session
+            if (sessionStorage.getItem('viralson_anchor_dismissed') === 'true') {
+                const anchor = document.getElementById('googleAdAnchor');
+                if (anchor) anchor.classList.add('hidden');
+            }
+
+            // Safe push for Google AdSense slots without breaking if adblocker is present
+            try {
+                const adSlots = document.querySelectorAll('.adsbygoogle');
+                if (adSlots.length > 0 && window.adsbygoogle) {
+                    adSlots.forEach(() => {
+                        try {
+                            (window.adsbygoogle = window.adsbygoogle || []).push({});
+                        } catch(e) {}
+                    });
+                }
+            } catch(e) {}
+        })();
+    </script>
+
+
+</body>
+<!-- Mirrored from https://viralson.netlify.app/sports/?tab=basketball by HTTrack Website Copier/3.x [XR&CO], Mon, 19 Oct 2026 07:09:37 GMT -->
+</html>

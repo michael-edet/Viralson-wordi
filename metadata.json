@@ -1,0 +1,7 @@
+{
+  "name": "Viral Son | Modern Blogging Platform",
+  "description": "Viral Son is a modern blogging platform for trending news, entertainment, technology, lifestyle, and community discussions.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
