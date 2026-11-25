@@ -3,7 +3,7 @@
  * Viral Son Theme Functions & Definitions
  *
  * @package ViralSon
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 if (!defined('ABSPATH')) {
@@ -14,25 +14,18 @@ if (!defined('ABSPATH')) {
  * 1. Theme Setup
  */
 function viralson_theme_setup() {
-    // Add default posts and comments RSS feed links to head.
     add_theme_support('automatic-feed-links');
-
-    // Let WordPress manage the document title.
     add_theme_support('title-tag');
-
-    // Enable support for Post Thumbnails on posts and pages.
     add_theme_support('post-thumbnails');
-    set_post_thumbnail_size(1200, 675, true); // 16:9 ratio
+    set_post_thumbnail_size(1200, 675, true);
     add_image_size('viralson-card', 600, 338, true);
     add_image_size('viralson-thumbnail', 120, 120, true);
 
-    // Register primary navigation menu.
     register_nav_menus(array(
         'primary' => __('Primary Header Menu', 'viralson'),
         'footer'  => __('Footer Quick Links', 'viralson'),
     ));
 
-    // Switch default core markup for search form, comment form, and comments to output valid HTML5.
     add_theme_support('html5', array(
         'search-form',
         'comment-form',
@@ -43,7 +36,6 @@ function viralson_theme_setup() {
         'script',
     ));
 
-    // Custom Logo Support
     add_theme_support('custom-logo', array(
         'height'      => 48,
         'width'       => 180,
@@ -51,7 +43,6 @@ function viralson_theme_setup() {
         'flex-width'  => true,
     ));
 
-    // Editor Styles
     add_theme_support('editor-styles');
     add_theme_support('responsive-embeds');
 }
@@ -61,7 +52,6 @@ add_action('after_setup_theme', 'viralson_theme_setup');
  * 2. Enqueue Scripts & Styles
  */
 function viralson_enqueue_scripts() {
-    // Font Awesome 6
     wp_enqueue_style(
         'font-awesome-6',
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
@@ -69,31 +59,29 @@ function viralson_enqueue_scripts() {
         '6.4.0'
     );
 
-    // Theme Master Stylesheet
     wp_enqueue_style(
         'viralson-style',
         get_stylesheet_uri(),
         array('font-awesome-6'),
-        '1.0.0'
+        '1.1.0'
     );
 
-    // Theme JavaScript
     wp_enqueue_script(
         'viralson-main',
         get_template_directory_uri() . '/assets/js/theme.js',
         array(),
-        '1.0.0',
+        '1.1.0',
         true
     );
 
-    // Pass AJAX and localized variables to script
-    wp_localize_script('viralson_main', 'viralsonData', array(
-        'ajaxUrl'    => admin_url('admin-ajax.php'),
-        'siteUrl'    => home_url('/'),
-        'searchNonce'=> wp_create_nonce('viralson_search_nonce'),
+    wp_localize_script('viralson-main', 'viralsonData', array(
+        'ajaxUrl'      => admin_url('admin-ajax.php'),
+        'siteUrl'      => home_url('/'),
+        'themeUrl'     => get_template_directory_uri(),
+        'searchNonce'  => wp_create_nonce('viralson_search_nonce'),
+        'contactNonce' => wp_create_nonce('viralson_contact_nonce'),
     ));
 
-    // Comments reply script
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
@@ -187,7 +175,6 @@ function viralson_register_audio_post_type() {
 
     register_post_type('audio_release', $args);
 
-    // Audio Genre Taxonomy
     register_taxonomy('audio_genre', array('audio_release'), array(
         'hierarchical'      => true,
         'labels'            => array(
@@ -294,7 +281,7 @@ function viralson_estimated_reading_time($post_id = null) {
  */
 function viralson_ajax_search() {
     check_ajax_referer('viralson_search_nonce', 'nonce');
-    $term = isset($_POST['term']) ? sanitize_text_field($_POST['term']) : '';
+    $term = isset($_POST['term']) ? sanitize_text_field(wp_unslash($_POST['term'])) : '';
 
     if (empty($term)) {
         wp_send_json_success(array());
@@ -302,8 +289,8 @@ function viralson_ajax_search() {
 
     $query = new WP_Query(array(
         's'              => $term,
-        'posts_per_page' => 8,
-        'post_type'      => array('post', 'audio_release'),
+        'posts_per_page' => 10,
+        'post_type'      => array('post', 'page', 'audio_release'),
         'post_status'    => 'publish',
     ));
 
@@ -311,12 +298,19 @@ function viralson_ajax_search() {
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
+            $pt = get_post_type();
+            $cat = 'Article';
+            if ($pt === 'audio_release') {
+                $cat = 'Music';
+            } elseif ($pt === 'page') {
+                $cat = 'Page';
+            }
             $results[] = array(
-                'title'     => get_the_title(),
-                'url'       => get_permalink(),
-                'category'  => get_post_type() === 'audio_release' ? 'Music' : 'Article',
-                'excerpt'   => wp_trim_words(get_the_excerpt(), 18),
-                'date'      => get_the_date(),
+                'title'   => get_the_title(),
+                'url'     => get_permalink(),
+                'category'=> $cat,
+                'excerpt' => wp_trim_words(get_the_excerpt(), 18),
+                'date'    => get_the_date(),
             );
         }
         wp_reset_postdata();
@@ -326,3 +320,122 @@ function viralson_ajax_search() {
 }
 add_action('wp_ajax_viralson_search', 'viralson_ajax_search');
 add_action('wp_ajax_nopriv_viralson_search', 'viralson_ajax_search');
+
+/**
+ * 8. Contact & Advertising Inquiry AJAX Handler
+ */
+function viralson_handle_contact_form() {
+    check_ajax_referer('viralson_contact_nonce', 'nonce');
+
+    $name    = isset($_POST['name']) ? sanitize_text_field(wp_unslash($_POST['name'])) : '';
+    $email   = isset($_POST['email']) ? sanitize_email(wp_unslash($_POST['email'])) : '';
+    $phone   = isset($_POST['phone']) ? sanitize_text_field(wp_unslash($_POST['phone'])) : '';
+    $subject = isset($_POST['subject']) ? sanitize_text_field(wp_unslash($_POST['subject'])) : 'General Inquiry';
+    $message = isset($_POST['message']) ? sanitize_textarea_field(wp_unslash($_POST['message'])) : '';
+
+    if (empty($name) || empty($email) || !is_email($email) || empty($message)) {
+        wp_send_json_error(array(
+            'message' => __('Please provide a valid name, email address, and message.', 'viralson'),
+        ), 400);
+    }
+
+    $to = get_option('admin_email');
+    if (empty($to) || !is_email($to)) {
+        $to = 'iamoffixial@gmail.com';
+    }
+
+    $mail_subject = sprintf('[Viral Son %s] Message from %s', strtoupper($subject), $name);
+    $mail_body = sprintf(
+        "New inquiry submitted on Viral Son:\n\nName: %s\nEmail: %s\nPhone: %s\nDepartment / Topic: %s\n\nMessage:\n%s\n",
+        $name,
+        $email,
+        $phone ?: 'Not provided',
+        $subject,
+        $message
+    );
+    $headers = array(
+        'Content-Type: text/plain; charset=UTF-8',
+        'Reply-To: ' . $name . ' <' . $email . '>',
+    );
+
+    wp_mail($to, $mail_subject, $mail_body, $headers);
+
+    wp_send_json_success(array(
+        'message' => sprintf(
+            __('Thank you, %s! Your message has been sent to our %s desk. We typically respond within 24–48 business hours.', 'viralson'),
+            esc_html($name),
+            esc_html(strtoupper($subject))
+        ),
+    ));
+}
+add_action('wp_ajax_viralson_contact', 'viralson_handle_contact_form');
+add_action('wp_ajax_nopriv_viralson_contact', 'viralson_handle_contact_form');
+
+/**
+ * 9. Auto-Create Essential & AdSense Compliance Pages on Theme Activation
+ */
+function viralson_create_default_pages() {
+    $pages = array(
+        'about' => array(
+            'title'    => 'About Us',
+            'template' => 'page-about.php',
+        ),
+        'contact' => array(
+            'title'    => 'Contact Us',
+            'template' => 'page-contact.php',
+        ),
+        'community' => array(
+            'title'    => 'Community',
+            'template' => 'page-community.php',
+        ),
+        'terms' => array(
+            'title'    => 'Terms and Conditions',
+            'template' => 'page-terms.php',
+        ),
+        'privacy-policy' => array(
+            'title'    => 'Privacy Policy',
+            'template' => 'page-privacy-policy.php',
+        ),
+        'disclaimer' => array(
+            'title'    => 'Disclaimer',
+            'template' => 'page-disclaimer.php',
+        ),
+        'cookie-policy' => array(
+            'title'    => 'Cookie Policy',
+            'template' => 'page-cookie-policy.php',
+        ),
+        'dmca' => array(
+            'title'    => 'DMCA & Copyright Policy',
+            'template' => 'page-dmca.php',
+        ),
+        'editorial-policy' => array(
+            'title'    => 'Editorial Policy',
+            'template' => 'page-editorial-policy.php',
+        ),
+        'advertise' => array(
+            'title'    => 'Advertise With Us',
+            'template' => 'page-advertise.php',
+        ),
+        'affiliate-disclosure' => array(
+            'title'    => 'Affiliate Disclosure',
+            'template' => 'page-affiliate-disclosure.php',
+        ),
+    );
+
+    foreach ($pages as $slug => $data) {
+        $existing = get_page_by_path($slug);
+        if (!$existing) {
+            $page_id = wp_insert_post(array(
+                'post_title'   => $data['title'],
+                'post_name'    => $slug,
+                'post_status'  => 'publish',
+                'post_type'    => 'page',
+                'post_content' => '',
+            ));
+            if ($page_id && !is_wp_error($page_id)) {
+                update_post_meta($page_id, '_wp_page_template', $data['template']);
+            }
+        }
+    }
+}
+add_action('after_switch_theme', 'viralson_create_default_pages');

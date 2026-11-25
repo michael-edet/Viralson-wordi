@@ -1,58 +1,49 @@
 # Viral Son — WordPress Theme (Production Ready)
 
-Welcome to the **Viral Son** WordPress Theme, an editorial publishing and lossless music download theme built for high-performance magazines, tech publications, and music soundrooms.
+Welcome to the **Viral Son** WordPress Theme, an independent editorial publishing and lossless music release theme built for news, technology, sports, lifestyle, and AdSense-ready publishing.
 
 ---
 
-## 🚀 Quick Installation Guide (1-Minute Setup)
+## Quick Installation Guide
 
 ### Method A: Install via WordPress Admin (Recommended)
-1. In the AI Studio preview bar, click **"📦 Download viralson-theme.zip"** (or use the generated `viralson-theme.zip`).
+1. Download `viralson-theme.zip` using the **"Download viralson-theme.zip"** button in the preview bar.
 2. Log in to your WordPress Admin dashboard (`/wp-admin`).
-3. Navigate to **Appearance > Themes**.
-4. Click **Add New Theme > Upload Theme**.
-5. Choose `viralson-theme.zip` from your computer and click **Install Now**.
-6. Click **Activate**.
+3. Navigate to **Appearance > Themes > Add New Theme > Upload Theme**.
+4. Upload `viralson-theme.zip`, click **Install Now**, and click **Activate**.
 
 ### Method B: Upload via FTP / cPanel File Manager
-1. Extract the `viralson-theme.zip` folder.
-2. Upload the `viralson` directory to your server at `/wp-content/themes/viralson/`.
-3. In your WordPress dashboard, go to **Appearance > Themes** and click **Activate**.
+1. Extract `viralson-theme.zip`.
+2. Upload the `viralson` folder to `/wp-content/themes/viralson/`.
+3. Activate **Viral Son** under **Appearance > Themes**.
 
 ---
 
-## 🎵 Custom Post Type: Music & Audio Releases
+## Automatic Pages & AdSense Compliance Setup
 
-The theme registers a dedicated post type: **Audio Releases** (`/audio/`).
+Upon theme activation (`after_switch_theme`), Viral Son automatically provisions the following pages with dedicated page templates:
+- **About Us** (`/about/`) — Editorial mission, ownership (Michael Edet), and newsroom desks
+- **Contact Us** (`/contact/`) — Direct contact email (`iamoffixial@gmail.com`) and AJAX contact form
+- **Privacy Policy** (`/privacy-policy/`) — Cookies, Google AdSense / DoubleClick disclosures, GDPR & CCPA rights
+- **Cookie Policy** (`/cookie-policy/`) — Cookie inventory table and interactive consent preferences
+- **Disclaimer** (`/disclaimer/`) — Informational content, third-party links, and ad disclosures
+- **Terms and Conditions** (`/terms/`) — Site rules, intellectual property, and downloadable media licensing
+- **DMCA & Copyright Policy** (`/dmca/`) — 17 U.S.C. § 512 takedown & counter-notice procedure
+- **Editorial Policy** (`/editorial-policy/`) — Sourcing, fact-checking, corrections, and ad-editorial firewall
+- **Advertise With Us** (`/advertise/`) — Sponsorship packages, media kit specs, and inquiry form
+- **Affiliate Disclosure** (`/affiliate-disclosure/`) — Transparent FTC 16 CFR Part 255 disclosure
 
-### How to Publish an Audio Release with Download Tiers:
-1. Go to **Music & Audio > Add Track** in your WordPress dashboard.
-2. Enter the track title, liner notes, and set the **Featured Image** (album artwork).
-3. In the **Audio Stream & Download Settings** box:
-   - **Artist / Producer**: Name of artist (e.g. *Aurora* or *Alex Parker*).
-   - **Audio Stream Preview URL**: URL to a `.mp3` or `.wav` sample file for the web audio player.
-   - **Track Duration**: e.g., `3:45`.
-   - **320kbps MP3 Download Link**: Direct link to your MP3 download package.
-   - **24-bit 96kHz Lossless FLAC Download Link**: Direct link to your studio master FLAC package.
-4. Click **Publish**. The post will automatically render with the interactive audio player and download tier cards!
-
----
-
-## 🎨 Theme Features & Customization
-
-- **Native Dark / Light Mode**: Automatically detects visitor's OS preference (`prefers-color-scheme`) with instant client switch button and cookie persistence.
-- **Instant Search Overlay**: Built-in AJAX search modal accessible via `/` hotkey or search button.
-- **Widgetized Ad Slots**:
-  - `Header Ad Banner`
-  - `Main Sidebar`
-  - `Footer Columns 1, 2, 3`
-  - Place your Google AdSense code or banner HTML directly into **Appearance > Widgets**.
-- **Reading Time**: Automatically calculates estimated reading minutes on articles.
-- **Zero Plugin Dependencies**: Runs natively on WordPress Core without requiring heavy visual builders.
+All footer links connect automatically via `home_url()` permalinks. Ensure **Settings > Permalinks** is set to **Post name** (`/%postname%/`) so clean URLs resolve immediately.
 
 ---
 
-## ⚙️ Requirements
+## Custom Post Type: Music & Audio Releases
+
+The theme registers **Music & Audio** (`audio_release`) with genre taxonomy and metabox fields for Artist/Producer, Stream Preview URL, Track Duration, 320kbps MP3 download link, and 24-bit FLAC download link.
+
+---
+
+## Requirements
 - WordPress 5.8 or higher
-- PHP 7.4 or higher (fully tested on PHP 8.1, 8.2, and 8.3)
+- PHP 7.4 or higher (tested on PHP 8.1, 8.2, and 8.3)
 - MySQL 5.7+ or MariaDB 10.3+

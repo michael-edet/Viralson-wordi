@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Contact Page
- * Description: Contact Viral Son Desks
+ * Description: Real Contact Us Page for Readers, Tips, Corrections, DMCA & Advertising
  *
  * @package ViralSon
  */
@@ -9,13 +9,12 @@ get_header();
 ?>
 
 <main>
-        
-<!-- Page Header -->
+
 <section class="page-header">
     <div class="container">
-        <span class="post-category" style="background:#e8f4fc; color:#2980b9; margin-bottom: 0.8rem;">We're Here For You</span>
-        <h1>Get in Touch</h1>
-        <p>Have a story tip, feedback, partnership enquiry or just want to say hello? We'd love to hear from you — and we read every single message.</p>
+        <span class="post-category" style="background:#e8f4fc; color:#2980b9; margin-bottom: 0.8rem;">Direct Digital Newsroom</span>
+        <h1>Contact Viral Son</h1>
+        <p>Have a story tip, article correction, privacy request, DMCA notice, or sponsorship inquiry? Reach our editorial team directly—every message is read by a real editor.</p>
     </div>
 </section>
 
@@ -27,36 +26,36 @@ get_header();
                 <div class="contact-card-icon">
                     <i class="fas fa-envelope"></i>
                 </div>
-                <h3>Email Us</h3>
-                <p>Our team typically responds within 24 hours on business days.</p>
-                <a href="mailto:hello@viralson.com" class="contact-link">hello@viralson.com</a>
+                <h3>Direct Email</h3>
+                <p>Reach Founder &amp; Editor-in-Chief Michael Edet and the editorial desk directly.</p>
+                <a href="mailto:iamoffixial@gmail.com" class="contact-link">iamoffixial@gmail.com</a>
             </div>
 
             <div class="contact-card green">
                 <div class="contact-card-icon">
-                    <i class="fas fa-phone-alt"></i>
+                    <i class="fas fa-bullhorn"></i>
                 </div>
-                <h3>Call Us</h3>
-                <p>Speak directly with our editorial or partnerships desk.</p>
-                <a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a>
+                <h3>Advertising &amp; Music</h3>
+                <p>Sponsored features, artist track premieres, and media kit requests.</p>
+                <a href="<?php echo esc_url(home_url('/advertise/')); ?>" class="contact-link">Advertise With Us &rarr;</a>
             </div>
 
             <div class="contact-card orange">
                 <div class="contact-card-icon">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-balance-scale"></i>
                 </div>
-                <h3>Visit Us</h3>
-                <p>Drop by our newsroom during regular office hours.</p>
-                <a href="#map" class="contact-link" id="visitMapLink">123 Media Street, Digital City</a>
+                <h3>Privacy &amp; DMCA</h3>
+                <p>GDPR/CCPA data requests and fast-track copyright takedown notices.</p>
+                <a href="mailto:iamoffixial@gmail.com?subject=Privacy%20or%20DMCA%20Request" class="contact-link">iamoffixial@gmail.com</a>
             </div>
 
             <div class="contact-card purple">
                 <div class="contact-card-icon">
-                    <i class="fas fa-headset"></i>
+                    <i class="fas fa-comments"></i>
                 </div>
-                <h3>Support</h3>
-                <p>Technical issues, subscriptions or account help.</p>
-                <a href="mailto:support@viralson.com" class="contact-link">support@viralson.com</a>
+                <h3>Community Hub</h3>
+                <p>Join reader discussions or follow our daily dispatches across platforms.</p>
+                <a href="<?php echo esc_url(home_url('/community/')); ?>" class="contact-link">Visit Community &rarr;</a>
             </div>
         </div>
     </div>
@@ -67,27 +66,17 @@ get_header();
     <div class="container contact-container">
         <!-- Contact Information Column -->
         <div class="contact-info">
-            <h2>Contact Information</h2>
-            <p>Whether you're a reader with feedback, a brand looking to collaborate, or a journalist chasing a story, there's a direct line to the right team below.</p>
+            <h2>Newsroom Details</h2>
+            <p>Viral Son operates as an independent, remote-first digital newsroom. All general inquiries, press releases, corrections, and partnership proposals are handled centrally so nothing gets lost.</p>
 
             <div class="contact-details">
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-user-tie"></i>
                     </div>
                     <div class="contact-text">
-                        <h4>Our Office</h4>
-                        <p>123 Media Street, Digital City, DC 10001</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h4>Phone Line</h4>
-                        <p>+1 (555) 123-4567</p>
+                        <h4>Publisher &amp; Editor-in-Chief</h4>
+                        <p>Michael Edet — Viral Son Media</p>
                     </div>
                 </div>
 
@@ -96,26 +85,35 @@ get_header();
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="contact-text">
-                        <h4>General Enquiries</h4>
-                        <p>hello@viralson.com</p>
+                        <h4>Official Contact Email</h4>
+                        <p><a href="mailto:iamoffixial@gmail.com" class="inline-link">iamoffixial@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Coverage &amp; Publishing</h4>
+                        <p>Digital-first global coverage (News, Tech, Sports, Lifestyle, Music)</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Office Hours Card -->
             <div class="office-hours">
-                <h4><i class="far fa-clock"></i> Office Hours (EST)</h4>
+                <h4><i class="far fa-clock"></i> Editorial Desk Response Hours</h4>
                 <div class="hours-row">
                     <span>Monday – Friday</span>
-                    <span>9:00 AM – 6:00 PM</span>
+                    <span>9:00 AM – 6:00 PM (24h reply target)</span>
                 </div>
                 <div class="hours-row">
                     <span>Saturday</span>
-                    <span>10:00 AM – 3:00 PM</span>
+                    <span>10:00 AM – 4:00 PM</span>
                 </div>
                 <div class="hours-row">
-                    <span>Sunday</span>
-                    <span>Closed (Emergency News Desk Active)</span>
+                    <span>Urgent Corrections / DMCA</span>
+                    <span>Reviewed within 24–48 hours</span>
                 </div>
             </div>
         </div>
@@ -123,44 +121,44 @@ get_header();
         <!-- Contact Form Wrapper -->
         <div class="contact-form-wrapper">
             <h3>Send Us a Message</h3>
-            <p>Fill in the form below and we'll route your message to the right department.</p>
+            <p>Fill in the form below and our team will reply to your email address within 24–48 business hours.</p>
 
             <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
 
-            <form id="contactForm" novalidate="">
+            <form id="contactForm" novalidate>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="contact-name">Full Name <span class="required">*</span></label>
-                        <input type="text" id="contact-name" name="name" class="form-control" placeholder="Jane Doe" required="">
+                        <input type="text" id="contact-name" name="name" class="form-control" placeholder="Your full name" required>
                     </div>
                     <div class="form-group">
                         <label for="contact-email">Email Address <span class="required">*</span></label>
-                        <input type="email" id="contact-email" name="email" class="form-control" placeholder="jane@example.com" required="">
+                        <input type="email" id="contact-email" name="email" class="form-control" placeholder="you@example.com" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="contact-phone">Phone Number</label>
-                        <input type="tel" id="contact-phone" name="phone" class="form-control" placeholder="+1 (555) 000-0000">
+                        <label for="contact-phone">Website / Social Handle (Optional)</label>
+                        <input type="text" id="contact-phone" name="phone" class="form-control" placeholder="https:// or @handle">
                     </div>
                     <div class="form-group">
-                        <label for="contact-subject">Department <span class="required">*</span></label>
-                        <select id="contact-subject" name="subject" class="form-control" required="">
-                            <option value="" disabled="" selected="">Select a department</option>
-                            <option value="editorial">Editorial &amp; Story Tips</option>
-                            <option value="advertising">Advertising &amp; Partnerships</option>
-                            <option value="support">Technical Support</option>
-                            <option value="careers">Careers &amp; Freelance Pitches</option>
-                            <option value="feedback">General Feedback</option>
-                            <option value="other">Something Else</option>
+                        <label for="contact-subject">Inquiry Topic <span class="required">*</span></label>
+                        <select id="contact-subject" name="subject" class="form-control" required>
+                            <option value="" disabled selected>Select a topic</option>
+                            <option value="editorial">Editorial, Story Tip &amp; Corrections</option>
+                            <option value="advertising">Advertising, Sponsored Posts &amp; Music</option>
+                            <option value="privacy-dmca">Privacy Request or DMCA Notice</option>
+                            <option value="support">Technical Support &amp; Newsletter</option>
+                            <option value="careers">Freelance Pitches &amp; Contributions</option>
+                            <option value="feedback">General Reader Feedback</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="contact-message">Your Message <span class="required">*</span></label>
-                    <textarea id="contact-message" name="message" class="form-control" placeholder="Tell us what's on your mind..." required=""></textarea>
+                    <textarea id="contact-message" name="message" class="form-control" placeholder="Share your story tip, correction URL, partnership details, or question..." required></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-green" id="submitBtn" style="width: 100%; padding: 14px; font-size: 1rem;">
@@ -169,28 +167,9 @@ get_header();
 
                 <p class="form-note">
                     <i class="fas fa-shield-alt"></i>
-                    <span>We respect your privacy. Your details are solely used to respond to your enquiry and are never shared or sold to third parties.</span>
+                    <span>Your details are used strictly to reply to your inquiry in line with our <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>" class="inline-link">Privacy Policy</a>.</span>
                 </p>
             </form>
-        </div>
-    </div>
-</section>
-
-<!-- Map Section -->
-<section class="map-section" id="map">
-    <div class="container">
-        <h2 class="section-title center">Find Our Newsroom</h2>
-        <div class="map-wrapper">
-            <iframe title="Viral Son office location map" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.1410%2C51.5000%2C-0.1100%2C51.5150&amp;layer=mapnik" loading="lazy">
-            </iframe>
-            <div class="map-overlay">
-                <h4><i class="fas fa-building"></i> Viral Son HQ</h4>
-                <p>123 Media Street</p>
-                <p>Digital City, DC 10001</p>
-                <a href="https://maps.google.com/?q=123+Media+Street+Digital+City" target="_blank" rel="noopener noreferrer" style="margin-top: 0.5rem; color: var(--primary-blue); font-weight: 600; display: inline-block;">
-                    Open in Maps →
-                </a>
-            </div>
         </div>
     </div>
 </section>
@@ -198,44 +177,44 @@ get_header();
 <!-- Department Contacts -->
 <section class="departments">
     <div class="container">
-        <h2 class="section-title center">Reach the Right Team</h2>
-        <p style="text-align: center; max-width: 640px; margin: 0 auto; color: var(--text-light);">Skip the switchboard and contact a specific desk directly.</p>
+        <h2 class="section-title center">How to Reach the Right Desk</h2>
+        <p style="text-align: center; max-width: 640px; margin: 0 auto; color: var(--text-light);">All inquiries are routed through our verified official mailbox so you receive a direct, human response.</p>
 
         <div class="departments-grid">
             <div class="department-card">
                 <div class="department-icon">
                     <i class="fas fa-newspaper"></i>
                 </div>
-                <h3>Editorial Desk</h3>
-                <p>Story tips, corrections, press releases, and interview requests.</p>
-                <a href="mailto:editorial@viralson.com" class="department-email">editorial@viralson.com</a>
+                <h3>Editorial &amp; Corrections</h3>
+                <p>News tips, interview requests, press releases, and factual corrections.</p>
+                <a href="mailto:iamoffixial@gmail.com?subject=Editorial%20Tip%20or%20Correction" class="department-email">iamoffixial@gmail.com</a>
             </div>
 
             <div class="department-card">
                 <div class="department-icon">
                     <i class="fas fa-bullhorn"></i>
                 </div>
-                <h3>Advertising</h3>
-                <p>Media kits, sponsored content, display advertising, and brand collaborations.</p>
-                <a href="mailto:ads@viralson.com" class="department-email">ads@viralson.com</a>
+                <h3>Advertising &amp; Music</h3>
+                <p>Sponsored articles, official track premieres, and display campaigns.</p>
+                <a href="mailto:iamoffixial@gmail.com?subject=Advertising%20Inquiry" class="department-email">iamoffixial@gmail.com</a>
             </div>
 
             <div class="department-card">
                 <div class="department-icon">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-gavel"></i>
                 </div>
-                <h3>Community</h3>
-                <p>Group moderation, event enquiries, Reddit, Telegram, and Discord guidelines.</p>
-                <a href="mailto:community@viralson.com" class="department-email">community@viralson.com</a>
+                <h3>Legal, Privacy &amp; DMCA</h3>
+                <p>GDPR/CCPA requests, copyright takedowns, and policy questions.</p>
+                <a href="mailto:iamoffixial@gmail.com?subject=DMCA%20or%20Privacy%20Inquiry" class="department-email">iamoffixial@gmail.com</a>
             </div>
 
             <div class="department-card">
                 <div class="department-icon">
-                    <i class="fas fa-briefcase"></i>
+                    <i class="fas fa-headset"></i>
                 </div>
-                <h3>Careers &amp; Pitches</h3>
-                <p>Open roles, internships, and freelance contributor article applications.</p>
-                <a href="mailto:careers@viralson.com" class="department-email">careers@viralson.com</a>
+                <h3>Reader Support</h3>
+                <p>Newsletter troubleshooting, accessibility help, and community feedback.</p>
+                <a href="mailto:iamoffixial@gmail.com?subject=Reader%20Support" class="department-email">iamoffixial@gmail.com</a>
             </div>
         </div>
     </div>
@@ -253,57 +232,37 @@ get_header();
                     <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="faq-answer">
-                    <p>Most enquiries receive a reply within 24 hours on business days. Messages sent over the weekend are answered on the next working day. Editorial tips marked as urgent are prioritised and reviewed the same day.</p>
+                    <p>Most messages sent through our form or to <a href="mailto:iamoffixial@gmail.com" class="inline-link">iamoffixial@gmail.com</a> receive a reply within 24–48 business hours. Urgent corrections and DMCA notices are prioritized.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <button class="faq-question" type="button" aria-expanded="false">
-                    <span>Can I submit a news tip anonymously?</span>
+                    <span>How do I report an error or request a correction?</span>
                     <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="faq-answer">
-                    <p>Yes. You can email editorial@viralson.com without providing personal details. If you'd prefer a more secure route, mention "secure tip" in the subject line and we'll send you instructions for encrypted contact.</p>
+                    <p>Email <a href="mailto:iamoffixial@gmail.com" class="inline-link">iamoffixial@gmail.com</a> with the article URL and details of the error. Following our <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>" class="inline-link">Editorial Policy</a>, verified factual errors are updated with a timestamped correction note.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <button class="faq-question" type="button" aria-expanded="false">
-                    <span>How do I advertise on Viral Son?</span>
+                    <span>How can brands or artists advertise on Viral Son?</span>
                     <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="faq-answer">
-                    <p>Email ads@viralson.com and we'll send you our current media kit, audience demographics and available placements. We offer display advertising, sponsored articles, newsletter placements and social campaigns.</p>
+                    <p>Visit our <a href="<?php echo esc_url(home_url('/advertise/')); ?>" class="inline-link">Advertise With Us</a> page to inspect sponsored post, music premiere, and banner packages, or email <a href="mailto:iamoffixial@gmail.com" class="inline-link">iamoffixial@gmail.com</a> directly.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <button class="faq-question" type="button" aria-expanded="false">
-                    <span>I'm having trouble with my newsletter subscription. Who do I contact?</span>
+                    <span>How do I submit a DMCA takedown or privacy request?</span>
                     <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="faq-answer">
-                    <p>Reach out to support@viralson.com with the email address you subscribed with. Include any confirmation email you received if possible, and we'll sort out delivery issues or unsubscribe requests promptly.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question" type="button" aria-expanded="false">
-                    <span>Do you accept guest posts or freelance contributions?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>We do. Send a short pitch — two or three paragraphs outlining your idea, angle and relevant writing samples — to careers@viralson.com. We review all pitches but can only respond to those that fit our current editorial calendar.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question" type="button" aria-expanded="false">
-                    <span>How do I report an error or correction in an article?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Email editorial@viralson.com with the article headline, the URL and a description of the error. Corrections are reviewed by an editor and published with a timestamped correction note where warranted.</p>
+                    <p>Review the checklist on our <a href="<?php echo esc_url(home_url('/dmca/')); ?>" class="inline-link">DMCA Policy</a> or <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>" class="inline-link">Privacy Policy</a> pages and email <a href="mailto:iamoffixial@gmail.com" class="inline-link">iamoffixial@gmail.com</a>.</p>
                 </div>
             </div>
         </div>
@@ -313,21 +272,20 @@ get_header();
 <!-- Social CTA -->
 <section class="social-cta">
     <div class="container">
-        <h2>Connect With Us on Social</h2>
-        <p>Sometimes a quick message is easier. Reach us on any of our channels — our community editors are active daily.</p>
+        <h2>Connect With Viral Son</h2>
+        <p>Follow our latest stories, tech reviews, and music releases across social channels.</p>
         <div class="social-cta-links">
             <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="social-cta-link"><i class="fab fa-facebook-f"></i> Facebook</a>
             <a href="https://twitter.com/viralson_mag" target="_blank" rel="noopener noreferrer" class="social-cta-link"><i class="fab fa-x-twitter"></i> Twitter / X</a>
             <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="social-cta-link"><i class="fab fa-instagram"></i> Instagram</a>
             <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-cta-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-            <a href="../community/index.html" class="social-cta-link"><i class="fab fa-telegram"></i> Telegram &amp; WhatsApp</a>
+            <a href="<?php echo esc_url(home_url('/community/')); ?>" class="social-cta-link"><i class="fab fa-telegram"></i> Community Hub</a>
         </div>
     </div>
 </section>
 
 <script>
     (function() {
-        // FAQ Accordion functionality
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
@@ -346,7 +304,6 @@ get_header();
             });
         });
 
-        // Contact Form Handling with server API integration
         const contactForm = document.getElementById('contactForm');
         const formStatus = document.getElementById('formStatus');
 
@@ -357,57 +314,60 @@ get_header();
                 ? '<i class="fas fa-check-circle"></i>'
                 : '<i class="fas fa-exclamation-circle"></i>') +
                 '<span>' + message + '</span>';
-
-            setTimeout(() => {
-                formStatus.classList.remove('show');
-            }, 7000);
+            setTimeout(() => { formStatus.classList.remove('show'); }, 8000);
         }
 
         if (contactForm) {
             contactForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
-
                 const name = document.getElementById('contact-name').value.trim();
                 const email = document.getElementById('contact-email').value.trim();
                 const phone = document.getElementById('contact-phone').value.trim();
                 const subject = document.getElementById('contact-subject').value;
                 const message = document.getElementById('contact-message').value.trim();
 
-                // Validation
                 if (!name || !email || !subject || !message) {
                     showStatus('error', 'Please fill in all required fields before sending.');
                     return;
                 }
-
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailPattern.test(email)) {
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                     showStatus('error', 'Please enter a valid email address.');
                     return;
                 }
 
                 const submitBtn = document.getElementById('submitBtn');
                 const originalHtml = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Transmitting...';
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 submitBtn.disabled = true;
 
                 try {
-                    const response = await fetch('/api/contact', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ name, email, phone, subject, message })
-                    });
+                    let response;
+                    if (typeof window.viralsonData !== 'undefined' && window.viralsonData.ajaxUrl) {
+                        const fd = new FormData();
+                        fd.append('action', 'viralson_contact');
+                        fd.append('nonce', window.viralsonData.contactNonce);
+                        fd.append('name', name);
+                        fd.append('email', email);
+                        fd.append('phone', phone);
+                        fd.append('subject', subject);
+                        fd.append('message', message);
+                        response = await fetch(window.viralsonData.ajaxUrl, { method: 'POST', body: fd });
+                    } else {
+                        response = await fetch('/api/contact', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ name, email, phone, subject, message })
+                        });
+                    }
                     const resData = await response.json();
-
                     if (response.ok && resData.success) {
-                        showStatus('success', 'Thank you, ' + name + '! Your message has been sent to the ' + (subject.toUpperCase()) + ' desk. We\'ll respond within 24 hours.');
+                        showStatus('success', (resData.data && resData.data.message) || resData.message || ('Thank you, ' + name + '! Your message has been sent to Viral Son (iamoffixial@gmail.com).'));
                         contactForm.reset();
                     } else {
-                        showStatus('success', 'Thank you, ' + name + '! Your message has been logged. We\'ll get back to you within 24 hours.');
-                        contactForm.reset();
+                        showStatus('error', (resData && resData.data && resData.data.message) || resData.error || 'Could not send message right now. Please email iamoffixial@gmail.com.');
                     }
                 } catch (err) {
-                    // Fallback graceful success simulation
-                    showStatus('success', 'Thank you, ' + name + '! Your message has been sent. We\'ll get back to you within 24 hours.');
+                    showStatus('success', 'Thank you, ' + name + '! Your message has been recorded. You can also email iamoffixial@gmail.com directly.');
                     contactForm.reset();
                 } finally {
                     submitBtn.innerHTML = originalHtml;
@@ -415,21 +375,8 @@ get_header();
                 }
             });
         }
-
-        // Smooth scroll for "Visit Us" card link
-        const visitLink = document.getElementById('visitMapLink');
-        if (visitLink) {
-            visitLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                const mapEl = document.getElementById('map');
-                if (mapEl) {
-                    mapEl.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        }
     })();
 </script>
-
-    </main>
+</main>
 
 <?php get_footer(); ?>

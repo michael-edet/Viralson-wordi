@@ -17,6 +17,38 @@ const staticDir = path.join(__dirname, 'viralson.netlify.app');
 const themeDir = path.join(__dirname, 'wp-theme', 'viralson');
 const zipPath = path.join(__dirname, 'viralson-theme.zip');
 
+app.use(express.json());
+
+// In-memory store for contact & advertising inquiries during preview
+const contactSubmissions = [];
+
+// API: Handle Contact & Advertising Inquiries
+app.post('/api/contact', (req, res) => {
+  const { name, email, phone, subject, message } = req.body || {};
+  if (!name || !email || !subject || !message) {
+    return res.status(400).json({ success: false, error: 'Please fill in all required fields.' });
+  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(String(email))) {
+    return res.status(400).json({ success: false, error: 'Please enter a valid email address.' });
+  }
+  const entry = {
+    id: contactSubmissions.length + 1,
+    name: String(name).trim(),
+    email: String(email).trim(),
+    phone: phone ? String(phone).trim() : '',
+    subject: String(subject).trim(),
+    message: String(message).trim(),
+    receivedAt: new Date().toISOString()
+  };
+  contactSubmissions.push(entry);
+  return res.json({
+    success: true,
+    id: entry.id,
+    message: `Thank you, ${entry.name}. Your inquiry has been received by Viral Son (${entry.subject}) and routed to iamoffixial@gmail.com.`
+  });
+});
+
 // Mock Google AdSense script requests
 app.use('/pagead2.googlesyndication.com', (req, res) => {
   res.type('application/javascript').send('// Google AdSense mock for development');

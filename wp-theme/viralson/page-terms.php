@@ -18,7 +18,7 @@ get_header();
         <p>Please read these terms carefully before using Viral Son. By accessing or using our website, you agree to be bound by these terms.</p>
         <div class="last-updated">
             <i class="far fa-calendar-check"></i>
-            <span>Last Updated: June 25, 2023 (Verified Current)</span>
+            <span>Last Updated: November 24, 2026</span>
         </div>
     </div>
 </section>
@@ -235,7 +235,7 @@ get_header();
                 </ul>
                 <div class="callout warning">
                     <i class="fas fa-copyright"></i>
-                    <p>If you are a copyright holder and believe any downloadable file or story infringes your rights, please reach out directly to <a href="mailto:legal@viralson.com" class="inline-link">legal@viralson.com</a> for expedited DMCA review.</p>
+                    <p>If you are a copyright holder and believe any downloadable file or story infringes your rights, please reach out directly to <a href="mailto:iamoffixial@gmail.com" class="inline-link">iamoffixial@gmail.com</a> for expedited DMCA review.</p>
                 </div>
             </section>
 
@@ -294,7 +294,7 @@ get_header();
                 <p>These Terms shall be interpreted and governed in accordance with applicable laws, without giving effect to conflict of laws principles. The parties agree to resolve any dispute through informal good-faith consultation before initiating legal arbitration or litigation.</p>
                 <div class="callout success">
                     <i class="fas fa-handshake"></i>
-                    <p>We are dedicated to resolving reader concerns amicably and quickly. Please contact us at <a href="mailto:legal@viralson.com" class="inline-link">legal@viralson.com</a> with any dispute or grievance.</p>
+                    <p>We are dedicated to resolving reader concerns amicably and quickly. Please contact us at <a href="mailto:iamoffixial@gmail.com" class="inline-link">iamoffixial@gmail.com</a> with any dispute or grievance.</p>
                 </div>
             </section>
 
@@ -314,23 +314,19 @@ get_header();
                     <h3><i class="fas fa-balance-scale"></i> Legal &amp; Compliance Team</h3>
                     <div class="contact-line">
                         <i class="fas fa-envelope"></i>
-                        <span>Email: <a href="mailto:legal@viralson.com">legal@viralson.com</a></span>
+                        <span>Email: <a href="mailto:iamoffixial@gmail.com">iamoffixial@gmail.com</a></span>
                     </div>
                     <div class="contact-line">
-                        <i class="fas fa-phone"></i>
-                        <span>Phone: +1 (555) 123-4567</span>
-                    </div>
-                    <div class="contact-line">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Office: 123 Media Street, Digital City, DC 10001</span>
+                        <i class="fas fa-user-tie"></i>
+                        <span>Publisher: Michael Edet (Viral Son Media)</span>
                     </div>
                     <div class="contact-line">
                         <i class="far fa-clock"></i>
-                        <span>Hours: Monday – Friday, 9:00 AM – 6:00 PM EST</span>
+                        <span>Hours: 24 – 48 business hours response time</span>
                     </div>
                 </div>
 
-                <p>For general inquiries or story suggestions, please visit our <a href="../contact/index.html" class="inline-link">Contact Us page</a> or email <a href="mailto:editorial@viralson.com" class="inline-link">editorial@viralson.com</a>.</p>
+                <p>For general inquiries or story suggestions, please visit our <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="inline-link">Contact Us page</a> or email <a href="mailto:iamoffixial@gmail.com" class="inline-link">iamoffixial@gmail.com</a>.</p>
             </section>
 
             <!-- Acknowledgment Callout -->

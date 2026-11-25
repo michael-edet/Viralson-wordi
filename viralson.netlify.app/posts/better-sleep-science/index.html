@@ -1867,7 +1867,7 @@
                 </p>
                 <div class="social-links">
                     <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://twitter.com/viralson_mag" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
@@ -1886,47 +1886,67 @@
                     <li class="footer-link"><a href="../../community/index.html">Community Hub</a></li>
                     <li class="footer-link"><a href="../../about/index.html">About Us</a></li>
                     <li class="footer-link"><a href="../../contact/index.html">Contact Us</a></li>
+                    <li class="footer-link"><a href="../../advertise/index.html">Advertise With Us</a></li>
+                    <li class="footer-link"><a href="../../privacy-policy/index.html">Privacy Policy</a></li>
                     <li class="footer-link"><a href="../../terms/index.html">Terms &amp; Conditions</a></li>
                 </ul>
             </div>
 
-            <!-- Dynamic Category Column -->
+            <!-- Policies & Standards Column -->
             <div class="footer-col">
-                
-                    <h3>Lifestyle Focus</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="../minimalism-lifestyle/index.html">Minimalist Philosophy</a></li>
-                        <li class="footer-link"><a href="../productive-habits/index.html">Productivity Routines</a></li>
-                        <li class="footer-link"><a href="index.html">Sleep &amp; Health Science</a></li>
-                        <li class="footer-link"><a href="../../lifestyle/index.html">Mindfulness</a></li>
-                        <li class="footer-link"><a href="../../lifestyle/index.html">Travel &amp; Living</a></li>
-                    </ul>
-                
+                <h3>Policies &amp; Standards</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="../../editorial-policy/index.html">Editorial Policy</a></li>
+                    <li class="footer-link"><a href="../../cookie-policy/index.html">Cookie Policy</a></li>
+                    <li class="footer-link"><a href="../../disclaimer/index.html">Disclaimer</a></li>
+                    <li class="footer-link"><a href="../../dmca/index.html">DMCA / Copyright Policy</a></li>
+                    <li class="footer-link"><a href="../../affiliate-disclosure/index.html">Affiliate Disclosure</a></li>
+                </ul>
             </div>
 
             <!-- Contact & Newsletter Column -->
             <div class="footer-col">
                 <h3>Contact &amp; Updates</h3>
                 <p style="font-size: 0.95rem; margin-bottom: 0.4rem;">
-                    <strong>Department:</strong> 
-                    
-                        lifestyle@viralson.com
-                    
+                    <strong>Editorial Desk:</strong>
+                    <a href="mailto:iamoffixial@gmail.com" style="color: inherit; text-decoration: underline;">iamoffixial@gmail.com</a>
                 </p>
                 <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 1rem;">
                     Get curated daily digests and viral stories delivered straight to your inbox.
                 </p>
-                <form class="footer-form" onsubmit="event.preventDefault(); const email = this.querySelector('input').value; alert('Thank you for subscribing with ' + email + '!'); this.reset();">
+                <form class="footer-form" onsubmit="event.preventDefault(); const msg = this.querySelector('.footer-sub-status'); const inp = this.querySelector('input'); if(msg){ msg.textContent = 'Subscribed ' + inp.value + ' to Viral Son updates.'; msg.style.display = 'block'; } this.reset();">
                     <div class="form-group" style="margin-bottom: 0.6rem;">
                         <input type="email" class="form-control" placeholder="Enter your email" required="" style="padding: 10px; font-size: 0.9rem; border-radius: 4px;">
                     </div>
                     <button type="submit" class="btn" style="width: 100%; padding: 10px; font-size: 0.9rem;">Subscribe Now</button>
+                    <span class="footer-sub-status" style="display:none; font-size:0.82rem; color:#2ecc71; margin-top:0.5rem;"></span>
                 </form>
             </div>
         </div>
 
         <div class="copyright">
-            <p>© <span id="footerCurrentYear">2026</span> Viral Son. All rights reserved. Built with 11ty for GitHub &amp; Netlify.</p>
+            <div class="footer-legal-strip">
+                <a href="../../privacy-policy/index.html">Privacy Policy</a>
+                <span class="footer-legal-sep">&bull;</span>
+                <a href="../../cookie-policy/index.html">Cookie Policy</a>
+                <span class="footer-legal-sep">&bull;</span>
+                <a href="../../disclaimer/index.html">Disclaimer</a>
+                <span class="footer-legal-sep">&bull;</span>
+                <a href="../../terms/index.html">Terms &amp; Conditions</a>
+                <span class="footer-legal-sep">&bull;</span>
+                <a href="../../dmca/index.html">DMCA Policy</a>
+                <span class="footer-legal-sep">&bull;</span>
+                <a href="../../editorial-policy/index.html">Editorial Policy</a>
+                <span class="footer-legal-sep">&bull;</span>
+                <a href="../../affiliate-disclosure/index.html">Affiliate Disclosure</a>
+                <span class="footer-legal-sep">&bull;</span>
+                <a href="../../advertise/index.html">Advertise With Us</a>
+                <span class="footer-legal-sep">&bull;</span>
+                <a href="../../about/index.html">About Us</a>
+                <span class="footer-legal-sep">&bull;</span>
+                <a href="../../contact/index.html">Contact Us</a>
+            </div>
+            <p>&copy; <span id="footerCurrentYear">2026</span> Viral Son. All rights reserved. Independent Digital Media &amp; Music Publishing.</p>
         </div>
     </div>
 </footer>

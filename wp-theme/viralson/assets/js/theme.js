@@ -1,7 +1,7 @@
 /**
  * Viral Son WordPress Theme Global Scripts
  *
- * Handles Dark Mode, Search Modal, AJAX Search, and Mobile Navigation.
+ * Handles Dark Mode, Search Modal, AJAX Search (+ JSON fallback), and Mobile Navigation.
  */
 (function() {
     'use strict';
@@ -30,30 +30,28 @@
                 const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
                 const newTheme = isDark ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('viralson_theme', newTheme);
+                try { localStorage.setItem('viralson_theme', newTheme); } catch (e) {}
                 updateThemeIcon(newTheme);
             });
         }
 
         // --- 2. Mobile Menu Toggle ---
         const mobileBtn = document.getElementById('mobileMenuBtn');
-        const navWrapper = document.getElementById('navWrapper');
+        const navMenu = document.getElementById('navMenu');
         const menuIcon = document.getElementById('menuIcon');
 
-        if (mobileBtn && navWrapper) {
+        if (mobileBtn && navMenu) {
             mobileBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
-                navWrapper.classList.toggle('active');
-                if (navWrapper.classList.contains('active')) {
-                    if (menuIcon) menuIcon.className = 'fas fa-times';
-                } else {
-                    if (menuIcon) menuIcon.className = 'fas fa-bars';
+                navMenu.classList.toggle('active');
+                if (menuIcon) {
+                    menuIcon.className = navMenu.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
                 }
             });
 
             document.addEventListener('click', function(e) {
-                if (!e.target.closest('#siteHeader')) {
-                    navWrapper.classList.remove('active');
+                if (!e.target.closest('header')) {
+                    navMenu.classList.remove('active');
                     if (menuIcon) menuIcon.className = 'fas fa-bars';
                 }
             });
@@ -69,19 +67,21 @@
         const resultsSummary = document.getElementById('searchResultsSummary');
         const emptyState = document.getElementById('searchEmptyState');
 
+        let fallbackIndex = null;
+
         function openSearch() {
             if (!searchModal) return;
-            searchModal.style.display = 'flex';
+            searchModal.classList.add('open');
             searchModal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
             if (searchInput) {
-                setTimeout(() => searchInput.focus(), 80);
+                setTimeout(() => searchInput.focus(), 60);
             }
         }
 
         function closeSearch() {
             if (!searchModal) return;
-            searchModal.style.display = 'none';
+            searchModal.classList.remove('open');
             searchModal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
         }
@@ -89,17 +89,15 @@
         if (searchOpenBtn) searchOpenBtn.addEventListener('click', openSearch);
         if (searchCloseBtn) searchCloseBtn.addEventListener('click', closeSearch);
 
-        // Press / to open search, Esc to close
         document.addEventListener('keydown', function(e) {
-            if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+            if (e.key === 'Escape' && searchModal && searchModal.classList.contains('open')) {
+                closeSearch();
+            } else if ((e.key === '/' || ((e.ctrlKey || e.metaKey) && e.key === 'k')) && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
                 e.preventDefault();
                 openSearch();
-            } else if (e.key === 'Escape' && searchModal && searchModal.style.display === 'flex') {
-                closeSearch();
             }
         });
 
-        // Click outside modal card to close
         if (searchModal) {
             searchModal.addEventListener('click', function(e) {
                 if (e.target === searchModal) {
@@ -108,19 +106,14 @@
             });
         }
 
-        // Quick Tag Buttons
-        const quickTags = document.querySelectorAll('.quick-tag-btn');
-        quickTags.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const query = this.getAttribute('data-query');
-                if (searchInput) {
-                    searchInput.value = query;
-                    triggerLiveSearch(query);
-                }
-            });
-        });
+        window.quickSearch = function(term) {
+            if (searchInput) {
+                searchInput.value = term;
+                if (searchClearBtn) searchClearBtn.style.display = 'block';
+                triggerLiveSearch(term);
+            }
+        };
 
-        // Debounced Search Input
         let debounceTimer;
         if (searchInput) {
             searchInput.addEventListener('input', function() {
@@ -131,7 +124,7 @@
                 clearTimeout(debounceTimer);
                 debounceTimer = setTimeout(() => {
                     triggerLiveSearch(query);
-                }, 280);
+                }, 220);
             });
         }
 
@@ -142,6 +135,12 @@
                 triggerLiveSearch('');
                 searchInput.focus();
             });
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text || '';
+            return div.innerHTML;
         }
 
         function triggerLiveSearch(query) {
@@ -155,10 +154,9 @@
             if (emptyState) emptyState.style.display = 'none';
             if (resultsSummary) {
                 resultsSummary.style.display = 'block';
-                resultsSummary.textContent = 'Searching archives for "' + query + '"...';
+                resultsSummary.innerHTML = 'Searching for "<strong>' + escapeHtml(query) + '</strong>"...';
             }
 
-            // If in WordPress environment with localized viralsonData
             if (typeof viralsonData !== 'undefined' && viralsonData.ajaxUrl) {
                 const formData = new FormData();
                 formData.append('action', 'viralson_search');
@@ -171,13 +169,39 @@
                 })
                 .then(res => res.json())
                 .then(data => {
-                    if (data.success && data.data) {
+                    if (data.success && Array.isArray(data.data) && data.data.length > 0) {
                         renderResults(data.data, query);
+                    } else {
+                        searchStaticFallback(query);
                     }
                 })
-                .catch(() => {
-                    if (resultsSummary) resultsSummary.textContent = 'Search completed.';
-                });
+                .catch(() => searchStaticFallback(query));
+            } else {
+                searchStaticFallback(query);
+            }
+        }
+
+        async function searchStaticFallback(query) {
+            try {
+                if (!fallbackIndex && typeof viralsonData !== 'undefined' && viralsonData.themeUrl) {
+                    const res = await fetch(viralsonData.themeUrl + '/search-index.json');
+                    if (res.ok) fallbackIndex = await res.json();
+                }
+                const list = Array.isArray(fallbackIndex) ? fallbackIndex : [];
+                const qLower = query.toLowerCase();
+                const matches = list.filter(item =>
+                    (item.title || '').toLowerCase().includes(qLower) ||
+                    (item.excerpt || '').toLowerCase().includes(qLower) ||
+                    (item.category || '').toLowerCase().includes(qLower)
+                ).map(item => ({
+                    ...item,
+                    url: (typeof viralsonData !== 'undefined' && viralsonData.siteUrl)
+                        ? viralsonData.siteUrl.replace(/\/$/, '') + item.url
+                        : item.url
+                }));
+                renderResults(matches, query);
+            } catch (e) {
+                renderResults([], query);
             }
         }
 
@@ -185,20 +209,24 @@
             if (!resultsList || !resultsSummary) return;
             resultsList.innerHTML = '';
 
-            if (items.length === 0) {
-                resultsSummary.textContent = 'No records found for "' + query + '"';
+            if (!items || items.length === 0) {
+                resultsSummary.innerHTML = 'Found <strong>0</strong> results for "<strong>' + escapeHtml(query) + '</strong>"';
+                resultsList.innerHTML = '<li class="search-no-results"><i class="far fa-frown" style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text-light);"></i><p>No matches found. Try searching for "climate", "foldable", "music", or "AI".</p></li>';
                 return;
             }
 
-            resultsSummary.textContent = 'Found ' + items.length + ' matching dispatches:';
+            resultsSummary.innerHTML = 'Found <strong>' + items.length + '</strong> result' + (items.length === 1 ? '' : 's') + ' for "<strong>' + escapeHtml(query) + '</strong>"';
             items.forEach(item => {
                 const li = document.createElement('li');
                 li.className = 'search-result-item';
                 li.innerHTML = `
-                    <a href="${item.url}" style="display: block; padding: 12px; border-bottom: 1px solid var(--border-color); text-decoration: none;">
-                        <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--primary-blue); font-weight: 700;">${item.category} · ${item.date}</span>
-                        <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin: 4px 0;">${item.title}</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-light); margin: 0;">${item.excerpt}</p>
+                    <a href="${escapeHtml(item.url)}" class="search-result-link">
+                        <div class="search-result-meta">
+                            <span class="search-category-pill">${escapeHtml(item.category)}</span>
+                            <span class="search-result-date">${escapeHtml(item.date || '')}</span>
+                        </div>
+                        <h4 class="search-result-title">${escapeHtml(item.title)}</h4>
+                        <p class="search-result-excerpt">${escapeHtml(item.excerpt || '')}</p>
                     </a>
                 `;
                 resultsList.appendChild(li);
